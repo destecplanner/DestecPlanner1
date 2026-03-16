@@ -71,7 +71,7 @@ export default function AdminUsersPage() {
           >
             {role}s
           </button>
-        )}
+        ))}
       </div>
 
       <Card className="border-white/5 glass">
