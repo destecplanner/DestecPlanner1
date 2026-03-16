@@ -1,5 +1,0 @@
-[phases.setup]
-nixPkgs = ["php83", "php83Extensions.pdo_pgsql", "php83Extensions.redis", "php83Extensions.gd", "php83Extensions.mbstring", "php83Extensions.xml", "php83Extensions.curl", "php83Extensions.zip", "php83Extensions.bcmath", "php83Extensions.tokenizer", "php83Extensions.fileinfo", "php83Extensions.openssl"]
-
-[start]
-cmd = "php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan serve --host=0.0.0.0 --port=$PORT"
