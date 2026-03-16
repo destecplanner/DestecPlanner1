@@ -11,3 +11,7 @@ Route::get('/user', function (Request $request) {
 foreach (glob(app_path('Modules/*/routes.php')) as $routeFile) {
     require $routeFile;
 }
+
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok', 'time' => now()]);
+});
