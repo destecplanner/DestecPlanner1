@@ -219,8 +219,8 @@ function BusinessCard({ image, rating, category, title, location, price }: {
             <span className="text-slate-400 text-sm font-medium mr-2">Başlangıç</span>
             <span className="text-xl">₺{price}'den</span>
           </div>
-          <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-teal-500 group-hover:text-white transition-all">
-            <ArrowRight className="w-5 h-5" />
+          <div className="px-5 py-2.5 rounded-full bg-slate-50 text-slate-400 font-bold text-sm group-hover:bg-teal-50 group-hover:text-teal-600 transition-all border border-transparent group-hover:border-teal-100">
+            Randevu Al
           </div>
         </div>
       </div>
