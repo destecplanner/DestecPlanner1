@@ -44,7 +44,7 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
-
+  return (
     <div className="flex flex-col gap-8">
       {/* Logo & Header */}
       <div className="text-center space-y-4">
@@ -117,4 +117,5 @@ export default function LoginPage() {
         </div>
       </form>
     </div>
+  );
 }
