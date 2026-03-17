@@ -44,7 +44,7 @@ export default function AdminBusinessesPage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-businesses"] })
-      toast.success("Business status updated")
+      toast.success("İşletme durumu güncellendi")
     }
   })
 
@@ -52,14 +52,14 @@ export default function AdminBusinessesPage() {
     <div className="space-y-12">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Business Partners</h1>
-          <p className="text-slate-500">Approve new registrations, monitor growth, and manage platform access.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">İş Ortakları</h1>
+          <p className="text-slate-500">Yeni kayıtları onaylayın, büyümeyi izleyin ve platform erişimini yönetin.</p>
         </div>
         <div className="relative w-full md:w-80">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             className="w-full bg-slate-900/40 border border-white/5 rounded-2xl py-3 pl-10 pr-4 text-sm text-white focus:ring-teal-500/50 transition-all font-medium"
-            placeholder="Search by name or slug..."
+            placeholder="İsim veya kısa ad (slug) ile ara..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -70,12 +70,12 @@ export default function AdminBusinessesPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Business & Owner</TableHead>
-              <TableHead>Category</TableHead>
-              <TableHead>Registration Date</TableHead>
-              <TableHead className="text-center">Subscription</TableHead>
-              <TableHead className="text-center">Status</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead>İşletme ve Sahibi</TableHead>
+              <TableHead>Kategori</TableHead>
+              <TableHead>Kayıt Tarihi</TableHead>
+              <TableHead className="text-center">Abonelik</TableHead>
+              <TableHead className="text-center">Durum</TableHead>
+              <TableHead className="text-right">İşlemler</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -96,17 +96,17 @@ export default function AdminBusinessesPage() {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-white group-hover:text-teal-400 transition-colors leading-tight">
-                        {user.business_name || "New Partner"}
+                        {user.business_name || "Yeni Ortak"}
                       </p>
                       <p className="text-[10px] text-slate-500 uppercase tracking-tighter mt-0.5">
-                        Owner: {user.name}
+                        Sahibi: {user.name}
                       </p>
                     </div>
                   </div>
                 </TableCell>
                 <TableCell>
                   <Badge variant="glass" className="bg-slate-950 border-white/5 text-[9px] uppercase tracking-widest px-3 py-1">
-                    Barbershop
+                    Berber
                   </Badge>
                 </TableCell>
                 <TableCell>
@@ -115,7 +115,7 @@ export default function AdminBusinessesPage() {
                 <TableCell className="text-center">
                   <div className="flex flex-col items-center gap-1">
                     <Badge className="bg-emerald-500/10 text-emerald-500 border-emerald-500/10 text-[8px] uppercase font-heavy">Premium</Badge>
-                    <span className="text-[9px] text-slate-600 italic">Renews in 18d</span>
+                    <span className="text-[9px] text-slate-600 italic">18 gün içinde yenilenir</span>
                   </div>
                 </TableCell>
                 <TableCell className="text-center">
@@ -151,8 +151,8 @@ export default function AdminBusinessesPage() {
       {!isLoading && !businesses?.length && (
         <div className="py-24 text-center glass rounded-[3rem] border border-dashed border-white/10">
           <ShieldAlert className="w-12 h-12 text-slate-800 mx-auto mb-6" />
-          <h3 className="text-white font-bold text-xl mb-2">No Partnerships Found</h3>
-          <p className="text-slate-500 text-sm italic">Adjust your filters or invite new businesses to the platform.</p>
+          <h3 className="text-white font-bold text-xl mb-2">İş Ortaklığı Bulunmadı</h3>
+          <p className="text-slate-500 text-sm italic">Filtrelerinizi düzenleyin veya platforma yeni işletmeler davet edin.</p>
         </div>
       )}
     </div>
@@ -173,7 +173,7 @@ function StatusBadge({ status }: { status: string }) {
         styles[status] || "bg-slate-500/10 text-slate-500"
       )}
     >
-      {status}
+      {status === 'pending' ? 'bekliyor' : status === 'active' ? 'aktif' : status === 'suspended' ? 'askıya alındı' : status}
     </Badge>
   )
 }

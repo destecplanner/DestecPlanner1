@@ -17,7 +17,7 @@ export function Footer() {
             </span>
           </Link>
           <p className="text-slate-400 text-sm max-w-sm mb-8 leading-relaxed">
-            The intelligent booking ecosystem for premium businesses. Elite precision in every appointment, ensuring your vision scales seamlessly.
+            Seçkin işletmeler için akıllı randevu ekosistemi. Her randevuda üst düzey hassasiyet, vizyonunuzun sorunsuz bir şekilde ölçeklenmesini sağlar.
           </p>
           <div className="flex gap-4">
             <a href="#" className="w-10 h-10 rounded-full border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-slate-900 hover:text-teal-400 transition-all">
@@ -33,29 +33,29 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-6">Marketplace</h4>
+          <h4 className="text-white font-bold mb-6">Pazar Yeri</h4>
           <ul className="space-y-4 text-sm text-slate-400">
-            <li><Link href="/explore" className="hover:text-teal-400 transition-colors">Explore Businesses</Link></li>
-            <li><Link href="/explore?category=beauty" className="hover:text-teal-400 transition-colors">Beauty & Spa</Link></li>
-            <li><Link href="/explore?category=health" className="hover:text-teal-400 transition-colors">Health & Wellness</Link></li>
-            <li><Link href="/explore?category=consulting" className="hover:text-teal-400 transition-colors">Consulting</Link></li>
+            <li><Link href="/explore" className="hover:text-teal-400 transition-colors">İşletmeleri Keşfet</Link></li>
+            <li><Link href="/explore?category=beauty" className="hover:text-teal-400 transition-colors">Güzellik ve Spa</Link></li>
+            <li><Link href="/explore?category=health" className="hover:text-teal-400 transition-colors">Sağlık ve Zindelik</Link></li>
+            <li><Link href="/explore?category=consulting" className="hover:text-teal-400 transition-colors">Danışmanlık</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-bold mb-6">Company</h4>
+          <h4 className="text-white font-bold mb-6">Şirket</h4>
           <ul className="space-y-4 text-sm text-slate-400">
-            <li><Link href="/pricing" className="hover:text-teal-400 transition-colors">Pricing</Link></li>
-            <li><Link href="/about" className="hover:text-teal-400 transition-colors">About Us</Link></li>
-            <li><Link href="/privacy" className="hover:text-teal-400 transition-colors">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:text-teal-400 transition-colors">Terms of Service</Link></li>
+            <li><Link href="/pricing" className="hover:text-teal-400 transition-colors">Fiyatlandırma</Link></li>
+            <li><Link href="/about" className="hover:text-teal-400 transition-colors">Hakkımızda</Link></li>
+            <li><Link href="/privacy" className="hover:text-teal-400 transition-colors">Gizlilik Politikası</Link></li>
+            <li><Link href="/terms" className="hover:text-teal-400 transition-colors">Kullanım Şartları</Link></li>
           </ul>
         </div>
       </div>
       
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-900 flex flex-col md:row items-center justify-between gap-4">
         <p className="text-slate-600 text-xs text-center">
-          © 2026 DestecPlanner. Design for visionaries, by visionaries.
+          © 2026 DestecPlanner. Vizyonerler için, vizyonerler tarafından tasarlandı.
         </p>
       </div>
     </footer>

@@ -38,7 +38,7 @@ export default function LoginPage() {
       }
       
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Invalid credentials');
+      setError(err.response?.data?.message || 'Geçersiz bilgiler');
     } finally {
       setLoading(false);
     }
@@ -47,7 +47,7 @@ export default function LoginPage() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <label className="text-sm font-medium text-slate-300">Email Address</label>
+        <label className="text-xs font-bold uppercase tracking-widest text-slate-500">E-posta Adresi</label>
         <Input 
           type="email" 
           placeholder="name@example.com" 
@@ -57,7 +57,7 @@ export default function LoginPage() {
         />
       </div>
       <div className="space-y-2">
-        <label className="text-sm font-medium text-slate-300">Password</label>
+        <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Şifre</label>
         <Input 
           type="password" 
           placeholder="••••••••" 
@@ -67,15 +67,15 @@ export default function LoginPage() {
         />
       </div>
       
-      {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
+      {error && <p className="text-rose-600 text-[10px] font-bold uppercase tracking-wider mt-2 bg-rose-50 p-3 rounded-xl border border-rose-100">{error}</p>}
       
-      <Button type="submit" className="w-full" size="lg" disabled={loading}>
-        {loading ? 'Signing in...' : 'Sign In'}
+      <Button type="submit" className="w-full h-14 rounded-2xl shadow-lg shadow-teal-600/20" size="lg" disabled={loading}>
+        {loading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
       </Button>
       
-      <p className="text-center text-slate-400 text-sm mt-4">
-        Don't have an account? {' '}
-        <button type="button" className="text-teal-400 hover:underline">Register</button>
+      <p className="text-center text-slate-500 text-sm mt-6 font-medium">
+        Hesabınız yok mu? {' '}
+        <button type="button" className="text-teal-600 hover:text-teal-700 font-bold underline underline-offset-4 decoration-teal-600/20">Kayıt Ol</button>
       </p>
     </form>
   );

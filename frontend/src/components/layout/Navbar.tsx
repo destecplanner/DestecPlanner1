@@ -16,9 +16,9 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Marketplace', href: '/explore' },
-    { name: 'Features', href: '/#features' },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Pazar Yeri', href: '/explore' },
+    { name: 'Özellikler', href: '/#features' },
+    { name: 'Fiyatlandırma', href: '/pricing' },
   ];
 
   return (
@@ -30,7 +30,7 @@ export function Navbar() {
           <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
             <Rocket className="w-6 h-6 text-white" />
           </div>
-          <span className="text-2xl font-bold tracking-tight text-gradient">
+          <span className="text-2xl font-bold tracking-tight text-slate-900">
             DestecPlanner
           </span>
         </Link>
@@ -41,22 +41,22 @@ export function Navbar() {
             <Link 
               key={link.name} 
               href={link.href} 
-              className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors"
             >
               {link.name}
             </Link>
           ))}
           <Button variant="outline" size="sm" asChild>
-            <Link href="/auth/login">Sign In</Link>
+            <Link href="/auth/login">Giriş Yap</Link>
           </Button>
           <Button size="sm" asChild>
-            <Link href="/auth/register/owner">Get Started</Link>
+            <Link href="/auth/register/owner">Başlayın</Link>
           </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-slate-300 p-2"
+          className="md:hidden text-slate-600 p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X /> : <Menu />}
@@ -65,21 +65,21 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-slate-950 border-b border-slate-800 p-6 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 p-6 animate-fade-in">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href} 
-                className="text-lg font-medium text-slate-300"
+                className="text-lg font-medium text-slate-900"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <hr className="border-slate-800 my-2" />
+            <hr className="border-slate-100 my-2" />
             <Button className="w-full" asChild>
-              <Link href="/auth/register/owner">Get Started</Link>
+              <Link href="/auth/register/owner">Başlayın</Link>
             </Button>
           </div>
         </div>

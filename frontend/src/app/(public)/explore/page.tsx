@@ -43,48 +43,48 @@ export default function ExplorePage() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3 mb-4"
           >
-            <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
-              <Sparkles className="w-5 h-5 text-teal-400" />
+            <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center border border-teal-100">
+              <Sparkles className="w-5 h-5 text-teal-600" />
             </div>
-            <h1 className="text-3xl font-bold tracking-tight text-white">Find Your Next Experience</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-slate-900">Sıradaki Deneyiminizi Bulun</h1>
           </motion.div>
-          <p className="text-slate-400 max-w-xl leading-relaxed">
-            Discover premium businesses near you. Filter by category, location, or search directly for your favorite professionals.
+          <p className="text-slate-600 max-w-xl leading-relaxed font-medium">
+            Yakınınızdaki premium işletmeleri keşfedin. Kategoriye, konuma göre filtreleyin veya doğrudan favori profesyonellerinizi arayın.
           </p>
         </div>
 
         {/* Search & Filter Bar */}
-        <div className="glass p-4 rounded-[2.5rem] border-white/5 mb-16 flex flex-col lg:flex-row gap-4 items-center shadow-2xl">
+        <div className="glass-card p-4 rounded-[2.5rem] border-slate-200 mb-16 flex flex-col lg:flex-row gap-4 items-center shadow-xl bg-white/80">
           <div className="relative flex-1 w-full pl-6">
-            <Search className="absolute left-10 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+            <Search className="absolute left-10 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <Input 
-              placeholder="Search services, businesses, or professionals..." 
+              placeholder="Hizmet, işletme veya profesyonel arayın..." 
               className="pl-12 bg-transparent border-0 focus-visible:ring-0 h-14"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <div className="h-8 w-px bg-slate-800 hidden lg:block" />
+          <div className="h-8 w-px bg-slate-200 hidden lg:block" />
           <div className="flex w-full lg:w-auto gap-4">
             <div className="relative flex-1 lg:w-64">
-              <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 z-10" />
+              <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 z-10" />
               <Input 
-                placeholder="All Cities" 
-                className="pl-12 bg-transparent border-white/5 h-14 rounded-2xl"
+                placeholder="Tüm Şehirler" 
+                className="pl-12 bg-slate-50 border-slate-200 h-14 rounded-2xl"
               />
             </div>
             <Select value={category} onValueChange={setCategory}>
-              <SelectTrigger className="w-full lg:w-48 h-14 rounded-2xl border-white/5 bg-transparent">
+              <SelectTrigger className="w-full lg:w-48 h-14 rounded-2xl border-slate-200 bg-slate-50">
                 <div className="flex items-center gap-2">
-                  <SlidersHorizontal className="w-4 h-4 text-slate-500" />
-                  <SelectValue placeholder="Category" />
+                  <SlidersHorizontal className="w-4 h-4 text-slate-400" />
+                  <SelectValue placeholder="Kategori" />
                 </div>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
-                <SelectItem value="1">Hair & Beauty</SelectItem>
-                <SelectItem value="2">Health & Wellness</SelectItem>
-                <SelectItem value="3">Professional Services</SelectItem>
+                <SelectItem value="all">Tüm Kategoriler</SelectItem>
+                <SelectItem value="1">Saç ve Güzellik</SelectItem>
+                <SelectItem value="2">Sağlık ve Zindelik</SelectItem>
+                <SelectItem value="3">Profesyonel Hizmetler</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -110,7 +110,7 @@ export default function ExplorePage() {
                 exit={{ opacity: 0 }}
               >
                 <ErrorState 
-                  message="Failed to load marketplace listings." 
+                  message="Pazar yeri listeleri yüklenemedi." 
                   onRetry={() => refetch()} 
                 />
               </motion.div>
@@ -122,11 +122,11 @@ export default function ExplorePage() {
                 exit={{ opacity: 0 }}
                 className="flex flex-col items-center justify-center py-32 text-center"
               >
-                <div className="w-24 h-24 rounded-full bg-slate-900 flex items-center justify-center mb-6 border border-white/5">
-                  <Search className="w-10 h-10 text-slate-700" />
+                <div className="w-24 h-24 rounded-full bg-slate-50 flex items-center justify-center mb-6 border border-slate-100">
+                  <Search className="w-10 h-10 text-slate-300" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">No results found</h3>
-                <p className="text-slate-500 max-w-xs">We couldn't find any businesses matching your current search criteria.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Sonuç bulunamadı</h3>
+                <p className="text-slate-500 max-w-xs font-medium">Mevcut arama kriterlerinize uygun herhangi bir işletme bulamadık.</p>
               </motion.div>
             ) : (
               <motion.div

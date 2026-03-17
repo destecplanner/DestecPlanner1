@@ -7,14 +7,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-br from-teal-400 to-teal-600 text-slate-950 shadow-[0_0_20px_-5px_rgba(20,184,166,0.3)] hover:shadow-[0_0_25px_-5px_rgba(20,184,166,0.5)] hover:bg-teal-500",
-        destructive: "bg-rose-500/10 text-rose-500 border border-rose-500/20 hover:bg-rose-500 hover:text-white shadow-sm",
-        outline: "border-2 border-white/10 bg-transparent text-white hover:bg-white/5 hover:border-white/20",
-        secondary: "bg-slate-900 border border-white/5 text-slate-300 hover:text-white hover:bg-slate-800",
-        ghost: "hover:bg-white/5 text-slate-400 hover:text-white",
-        link: "text-teal-500 underline-offset-4 hover:underline",
-        glass: "glass text-slate-100 hover:bg-white/10 hover:border-white/20",
-        premium: "bg-slate-950 text-white border border-white/10 hover:border-teal-500/40 glow-teal hover:shadow-[0_0_25px_-5px_rgba(20,184,166,0.2)]",
+        default: "bg-teal-600 text-white shadow-lg shadow-teal-600/20 hover:bg-teal-700 hover:shadow-teal-700/30",
+        destructive: "bg-rose-500 text-white hover:bg-rose-600 shadow-lg shadow-rose-500/20",
+        outline: "border-2 border-slate-200 bg-white text-slate-900 hover:bg-slate-50 hover:border-slate-300",
+        secondary: "bg-slate-100 border border-slate-200 text-slate-900 hover:bg-slate-200",
+        ghost: "hover:bg-slate-100 text-slate-600 hover:text-slate-900",
+        link: "text-teal-600 underline-offset-4 hover:underline",
+        glass: "bg-white/80 backdrop-blur-md border border-slate-200 text-slate-900 hover:bg-white",
+        premium: "bg-slate-900 text-white border border-slate-800 hover:bg-black glow-teal shadow-xl",
       },
       size: {
         default: "h-12 px-6 py-2",

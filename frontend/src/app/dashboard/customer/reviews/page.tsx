@@ -33,12 +33,12 @@ export default function ReviewsPage() {
     <div className="space-y-12">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Your Reviews</h1>
-          <p className="text-slate-500">Track and manage the feedback you've shared with the elite business network.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Değerlendirmeleriniz</h1>
+          <p className="text-slate-500">Seçkin işletme ağıyla paylaştığınız geri bildirimleri takip edin ve yönetin.</p>
         </div>
         <div className="flex bg-white/5 p-1 rounded-xl glass border border-white/10 shrink-0 self-start md:self-auto">
-           <div className="px-4 py-2 bg-teal-500 rounded-lg text-[10px] font-bold uppercase tracking-widest text-white glow-teal shadow-lg">Published</div>
-           <div className="px-4 py-2 text-slate-500 text-[10px] font-bold uppercase tracking-widest hover:text-slate-300 cursor-pointer">Drafts</div>
+           <div className="px-4 py-2 bg-teal-500 rounded-lg text-[10px] font-bold uppercase tracking-widest text-white glow-teal shadow-lg">Yayınlandı</div>
+           <div className="px-4 py-2 text-slate-500 text-[10px] font-bold uppercase tracking-widest hover:text-slate-300 cursor-pointer">Taslaklar</div>
         </div>
       </header>
 
@@ -80,7 +80,7 @@ export default function ReviewsPage() {
 
                        <div className="relative p-6 glass rounded-2xl border-white/5 bg-white/[0.02]">
                           <p className="text-slate-300 text-sm leading-relaxed italic max-w-4xl">
-                             "{review.comment || 'An exceptional experience at this premium venue. Every detail was handled with precision.'}"
+                             "{review.comment || 'Bu premium mekanda olağanüstü bir deneyim. Her detay hassasiyetle ele alındı.'}"
                           </p>
                        </div>
                     </div>
@@ -102,9 +102,9 @@ export default function ReviewsPage() {
         ) : (
           <EmptyState 
             icon={MessageSquare}
-            title="No Reviews Shared"
-            description="You haven't shared your elite experiences with the community yet. Completed appointments will appear here."
-            actionLabel="View Appointments"
+            title="Paylaşılan Değerlendirme Yok"
+            description="Henüz seçkin deneyimlerinizi toplulukla paylaşmadınız. Tamamlanan randevular burada görünecek."
+            actionLabel="Randevuları Görüntüle"
             onAction={() => window.location.href = '/dashboard/customer'}
           />
         )}

@@ -39,7 +39,7 @@ export default function ServicesPage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['services'] });
-      toast.success('Service deleted successfully');
+      toast.success('Hizmet başarıyla silindi');
     }
   });
 
@@ -52,12 +52,12 @@ export default function ServicesPage() {
     <div className="space-y-8">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Service Catalog</h1>
-          <p className="text-slate-500">Define and manage your premium service offerings and pricing.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Hizmet Kataloğu</h1>
+          <p className="text-slate-500">Premium hizmet tekliflerinizi ve fiyatlandırmanızı tanımlayın ve yönetin.</p>
         </div>
         <Button className="rounded-2xl h-14 px-8 glow-teal gap-2 text-lg">
           <Plus className="w-5 h-5" />
-          Create Service
+          Hizmet Oluştur
         </Button>
       </header>
 
@@ -65,7 +65,7 @@ export default function ServicesPage() {
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
         <input 
           className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:ring-teal-500/50 transition-all" 
-          placeholder="Search services..." 
+          placeholder="Hizmetlerde ara..." 
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -90,22 +90,22 @@ export default function ServicesPage() {
                 {service.name}
               </CardTitle>
               <CardDescription className="line-clamp-2 mb-6 italic leading-relaxed">
-                {service.description || 'No description provided for this premium service.'}
+                {service.description || 'Bu premium hizmet için açıklama belirtilmemiş.'}
               </CardDescription>
 
               <div className="grid grid-cols-2 gap-4 mb-2">
                 <div className="glass p-3 rounded-xl border-white/5 flex flex-col">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1">Duration</span>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1">Süre</span>
                   <span className="text-white font-bold flex items-center gap-1.5 text-sm">
                     <Clock className="w-3.5 h-3.5 text-teal-500" />
-                    {service.duration} mins
+                    {service.duration} dk
                   </span>
                 </div>
                 <div className="glass p-3 rounded-xl border-white/5 flex flex-col">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1">Price</span>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1">Fiyat</span>
                   <span className="text-white font-bold flex items-center gap-1.5 text-sm">
                     <DollarSign className="w-3.5 h-3.5 text-teal-500" />
-                    ${service.price}
+                    ₺{service.price}
                   </span>
                 </div>
               </div>
@@ -117,12 +117,12 @@ export default function ServicesPage() {
                 className="flex-1 rounded-xl border-white/5 hover:bg-teal-500/10 hover:text-teal-400 gap-2 h-12"
               >
                 <Edit3 className="w-4 h-4" />
-                Edit
+                Düzenle
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon" 
-                onClick={() => { if(confirm('Delete this service?')) deleteMutation.mutate(service.id)}}
+                onClick={() => { if(confirm('Bu hizmeti silmek istediğinizden emin misiniz?')) deleteMutation.mutate(service.id)}}
                 className="w-12 h-12 rounded-xl text-slate-600 hover:bg-rose-500/10 hover:text-rose-500 transition-all border border-transparent hover:border-rose-500/20"
               >
                 <Trash2 className="w-5 h-5" />
@@ -136,7 +136,7 @@ export default function ServicesPage() {
               <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-slate-700">
                 <Search className="w-8 h-8" />
               </div>
-              <p className="text-slate-500 italic">No services found in your catalog.</p>
+              <p className="text-slate-500 italic">Kataloğunuzda hizmet bulunamadı.</p>
            </div>
         )}
       </div>

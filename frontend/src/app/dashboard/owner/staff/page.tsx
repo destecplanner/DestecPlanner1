@@ -40,7 +40,7 @@ export default function StaffPage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['staff'] });
-      toast.success('Staff member removed');
+      toast.success('Personel çıkarıldı');
     }
   });
 
@@ -48,12 +48,12 @@ export default function StaffPage() {
     <div className="space-y-10">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Team Management</h1>
-          <p className="text-slate-500">Manage your specialists, their roles, and specialized services.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Takım Yönetimi</h1>
+          <p className="text-slate-500">Uzmanlarınızı, rollerini ve uzmanlaştıkları hizmetleri yönetin.</p>
         </div>
         <Button className="rounded-2xl h-14 px-10 glow-teal gap-3 text-lg">
           <UserPlus className="w-5 h-5" />
-          Add Member
+          Üye Ekle
         </Button>
       </header>
 
@@ -72,7 +72,7 @@ export default function StaffPage() {
                   </div>
                 </div>
                 <div className="space-y-1">
-                   <Badge variant="glass" className="bg-amber-500/10 text-amber-500 border-amber-500/20 px-2 py-0.5 text-[10px]">Senior Specialist</Badge>
+                   <Badge variant="glass" className="bg-amber-500/10 text-amber-500 border-amber-500/20 px-2 py-0.5 text-[10px]">Kıdemli Uzman</Badge>
                    <div className="flex items-center gap-1 text-yellow-500 text-xs font-bold justify-center sm:justify-start">
                      <Star className="w-3 h-3 fill-yellow-500" />
                      4.9 (88)
@@ -85,7 +85,7 @@ export default function StaffPage() {
                 <div className="flex justify-between items-start">
                    <div>
                      <h3 className="text-2xl font-bold text-white mb-1">{member.user?.name}</h3>
-                     <p className="text-slate-500 font-medium">{member.specialization || 'Lead Professional'}</p>
+                     <p className="text-slate-500 font-medium">{member.specialization || 'Uzman Profesyonel'}</p>
                    </div>
                    <div className="flex gap-2">
                      <Button variant="ghost" size="icon" className="w-10 h-10 rounded-xl hover:bg-white/10">
@@ -94,7 +94,7 @@ export default function StaffPage() {
                      <Button 
                        variant="ghost" 
                        size="icon" 
-                       onClick={() => { if(confirm('Remove this staff?')) deleteMutation.mutate(member.id)}}
+                       onClick={() => { if(confirm('Bu personeli çıkarmak istediğinizden emin misiniz?')) deleteMutation.mutate(member.id)}}
                        className="w-10 h-10 rounded-xl text-rose-500 hover:bg-rose-500/10"
                      >
                        <Trash2 className="w-4 h-4" />
@@ -140,7 +140,7 @@ export default function StaffPage() {
                 <h3 className="text-white font-bold text-xl mb-2">Build Your Dream Team</h3>
                 <p className="text-slate-500 text-sm">Add your high-performing specialists to start scaling your service operations.</p>
               </div>
-              <Button className="rounded-xl px-10 h-14 glow-teal">Get Started</Button>
+              <Button className="rounded-xl px-10 h-14 glow-teal">Başlayın</Button>
            </div>
         )}
       </div>

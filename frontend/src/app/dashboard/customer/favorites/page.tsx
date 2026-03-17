@@ -35,15 +35,15 @@ export default function FavoritesPage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['customer-favorites'] });
-      toast.success('Favorites updated');
+      toast.success('Favoriler güncellendi');
     }
   });
 
   return (
     <div className="space-y-12">
       <header>
-        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Your Favorites</h1>
-        <p className="text-slate-500">Quick access to the premium businesses you love the most.</p>
+        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Favorileriniz</h1>
+        <p className="text-slate-500">En sevdiğiniz premium işletmelere hızlı erişim.</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -80,7 +80,7 @@ export default function FavoritesPage() {
                       </div>
 
                       <Button variant="outline" className="w-full h-12 rounded-xl border-white/10 group-hover:bg-teal-600 group-hover:text-white group-hover:border-teal-600 transition-all font-bold uppercase tracking-widest text-[10px]">
-                        View Profile
+                        Profili Görüntüle
                         <ExternalLink className="ml-2 w-3.5 h-3.5" />
                       </Button>
                     </CardContent>
@@ -99,9 +99,9 @@ export default function FavoritesPage() {
           <div className="col-span-full">
             <EmptyState 
               icon={Heart}
-              title="No Favorites Yet"
-              description="Explore the marketplace and click the heart icon to save your favorite businesses for quick access."
-              actionLabel="Start Exploring"
+              title="Henüz Favori Yok"
+              description="Pazar yerini keşfedin ve favori işletmelerinizi hızlı erişim için kaydetmek üzere kalp simgesine tıklayın."
+              actionLabel="Keşfetmeye Başla"
               onAction={() => window.location.href = '/explore'}
             />
           </div>

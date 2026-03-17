@@ -31,12 +31,12 @@ export default function AdminModerationPage() {
     <div className="space-y-12">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">System Moderation</h1>
-          <p className="text-slate-500">Monitor community feedback, handle reports, and maintain platform standards.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Sistem Denetimi</h1>
+          <p className="text-slate-500">Topluluk geri bildirimlerini izleyin, raporları yönetin ve platform standartlarını koruyun.</p>
         </div>
         <div className="flex bg-rose-500/5 p-1 rounded-xl glass border border-rose-500/10">
-           <div className="px-5 py-2.5 bg-rose-500 rounded-lg text-[10px] font-bold uppercase tracking-widest text-white shadow-xl">Urgent Flags</div>
-           <div className="px-5 py-2.5 text-slate-500 text-[10px] font-bold uppercase tracking-widest hover:text-slate-300 cursor-pointer">All Activity</div>
+           <div className="px-5 py-2.5 bg-rose-500 rounded-lg text-[10px] font-bold uppercase tracking-widest text-white shadow-xl">Acil İşaretler</div>
+           <div className="px-5 py-2.5 text-slate-500 text-[10px] font-bold uppercase tracking-widest hover:text-slate-300 cursor-pointer">Tüm Aktivite</div>
         </div>
       </header>
 
@@ -67,8 +67,8 @@ export default function AdminModerationPage() {
                                "This business is amazing! I've been there 100 times in the last hour and every time it was perfect."
                             </div>
                             <div className="flex items-center gap-6 text-[10px] text-slate-500 font-medium">
-                               <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> 14 minutes ago</span>
-                               <span className="flex items-center gap-1.5 text-teal-400 cursor-pointer hover:underline"><ExternalLink className="w-3.5 h-3.5" /> View Review Source</span>
+                               <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {i === 1 ? '14 dakika önce' : '2 saat önce'}</span>
+                               <span className="flex items-center gap-1.5 text-teal-400 cursor-pointer hover:underline"><ExternalLink className="w-3.5 h-3.5" /> Yorum Kaynağını Görüntüle</span>
                             </div>
                          </div>
                          <div className="flex md:flex-col gap-3 shrink-0">

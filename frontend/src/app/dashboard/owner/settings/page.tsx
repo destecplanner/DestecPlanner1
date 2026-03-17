@@ -37,15 +37,15 @@ export default function SettingsPage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['business-profile'] });
-      toast.success('Business profile updated');
+      toast.success('İşletme profili güncellendi');
     }
   });
 
   return (
     <div className="space-y-12">
       <header>
-        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Business Settings</h1>
-        <p className="text-slate-500">Manage your digital identity, operational details, and platform presence.</p>
+        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">İşletme Ayarları</h1>
+        <p className="text-slate-500">Dijital kimliğinizi, operasyonel detaylarınızı ve platform varlığınızı yönetin.</p>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -54,7 +54,7 @@ export default function SettingsPage() {
           <Card className="p-10 rounded-[3rem] border-white/5 bg-slate-900/20">
             <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
               <Building2 className="w-5 h-5 text-teal-400" />
-              Core Identity
+              Temel Kimlik
             </h3>
             
             <div className="space-y-8">
@@ -73,20 +73,20 @@ export default function SettingsPage() {
               </div>
 
               <div className="space-y-3">
-                 <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Business Mini-Bio</label>
-                 <textarea 
+                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">İşletme Kısa Bilgisi</label>
+                <textarea 
                   className="w-full min-h-[120px] bg-white/5 border border-white/10 rounded-2xl p-6 text-white focus:ring-teal-500/50 focus:outline-none transition-all placeholder:text-slate-700" 
                   defaultValue={business?.description}
-                  placeholder="Tell the world about your commitment to excellence..."
-                 />
+                  placeholder="Mükemmeliyet taahhüdünüzü dünyaya anlatın..."
+                />
               </div>
 
               <div className="space-y-3">
-                 <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Physical Address</label>
-                 <div className="relative">
-                    <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-teal-500/80" />
-                    <Input defaultValue={business?.address} className="h-14 bg-white/5 border-white/10 rounded-2xl pl-16 pr-6 focus:ring-teal-500/50" placeholder="Premium Towers, Istanbul" />
-                 </div>
+                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Fiziksel Adres</label>
+                <div className="relative">
+                  <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-teal-500/80" />
+                  <Input defaultValue={business?.address} className="h-14 bg-white/5 border-white/10 rounded-2xl pl-16 pr-6 focus:ring-teal-500/50" placeholder="Premium Towers, Istanbul" />
+                </div>
               </div>
             </div>
           </Card>
@@ -94,7 +94,7 @@ export default function SettingsPage() {
           <Card className="p-10 rounded-[3rem] border-white/5 glass">
              <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
                <Shield className="w-5 h-5 text-teal-400" />
-               Security & Compliance
+               Güvenlik ve Uyumluluk
              </h3>
              <div className="space-y-6">
                 <div className="flex items-center justify-between p-6 glass rounded-2xl border-white/5">
@@ -141,16 +141,16 @@ export default function SettingsPage() {
               </p>
            </Card>
 
-           <Card className="p-10 rounded-[3rem] border-teal-500/10 bg-teal-500/5">
+            <Card className="p-10 rounded-[3rem] border-teal-500/10 bg-teal-500/5">
               <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                 <Save className="w-5 h-5 text-teal-400" />
-                 Push Updates
+                <Save className="w-5 h-5 text-teal-400" />
+                Güncellemeleri Yayınla
               </h3>
               <p className="text-xs text-slate-400 leading-relaxed italic mb-10">
-                 "A brand is only as strong as its consistency." Verify all details before synchronizing with the global marketplace.
+                "Bir marka sadece tutarlılığı kadar güçlüdür." Küresel pazar yeri ile senkronize etmeden önce tüm detayları doğrulayın.
               </p>
               <Button className="w-full h-16 rounded-[1.5rem] glow-teal text-lg group">
-                Save Profile 
+                Profili Kaydet 
                 <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
            </Card>

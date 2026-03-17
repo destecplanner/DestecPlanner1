@@ -45,7 +45,7 @@ export default function AppointmentsPage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["appointments"] })
-      toast.success("Appointment status updated")
+      toast.success("Randevu durumu güncellendi")
     }
   })
 
@@ -53,17 +53,17 @@ export default function AppointmentsPage() {
     <div className="space-y-8">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Appointments</h1>
-          <p className="text-slate-500">Manage your bookings, track performance, and coordinate with staff.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Randevular</h1>
+          <p className="text-slate-500">Rezervasyonlarınızı yönetin, performansı takip edin ve personelinizle koordine olun.</p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="border-white/10 glass rounded-xl gap-2">
             <Calendar className="w-4 h-4 text-teal-400" />
-            Calendar View
+            Takvim Görünümü
           </Button>
           <Button className="rounded-xl glow-teal gap-2">
             <Zap className="w-4 h-4" />
-            New Booking
+            Yeni Rezervasyon
           </Button>
         </div>
       </header>
@@ -81,7 +81,7 @@ export default function AppointmentsPage() {
                   : "text-slate-500 hover:text-slate-300"
               )}
             >
-              {s}
+              {s === 'all' ? 'tümü' : s === 'pending' ? 'bekliyor' : s === 'confirmed' ? 'onaylandı' : s === 'completed' ? 'tamamlandı' : s === 'cancelled' ? 'iptal edildi' : s}
             </button>
           ))}
         </div>
@@ -89,7 +89,7 @@ export default function AppointmentsPage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             className="w-full bg-slate-900/40 border border-white/5 rounded-xl py-2 pl-10 pr-4 text-sm text-white focus:ring-teal-500/50"
-            placeholder="Search customer..."
+            placeholder="Müşteri ara..."
           />
         </div>
       </div>
@@ -97,12 +97,12 @@ export default function AppointmentsPage() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Customer</TableHead>
-            <TableHead>Service</TableHead>
-            <TableHead>Date & Time</TableHead>
-            <TableHead>Specialist</TableHead>
-            <TableHead className="text-center">Status</TableHead>
-            <TableHead className="text-right">Actions</TableHead>
+            <TableHead>Müşteri</TableHead>
+            <TableHead>Hizmet</TableHead>
+            <TableHead>Tarih ve Saat</TableHead>
+            <TableHead>Uzman</TableHead>
+            <TableHead className="text-center">Durum</TableHead>
+            <TableHead className="text-right">İşlemler</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -184,7 +184,7 @@ export default function AppointmentsPage() {
           {!isLoading && !appointments?.length && (
             <TableRow>
               <TableCell colSpan={6} className="py-24 text-center text-slate-500 italic">
-                No appointments found matches the criteria.
+                Kriterlere uygun randevu bulunamadı.
               </TableCell>
             </TableRow>
           )}
@@ -209,7 +209,7 @@ function StatusBadge({ status }: { status: string }) {
         styles[status] || "bg-slate-500/20 text-slate-500"
       )}
     >
-      {status}
+      {status === 'pending' ? 'bekliyor' : status === 'confirmed' ? 'onaylandı' : status === 'completed' ? 'tamamlandı' : status === 'cancelled' ? 'iptal edildi' : status}
     </Badge>
   )
 }

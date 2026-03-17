@@ -37,22 +37,22 @@ export default function SchedulePage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['business-schedule'] });
-      toast.success('Schedule updated successfully');
+      toast.success('Çalışma saatleri başarıyla güncellendi');
     }
   });
 
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
 
   return (
     <div className="space-y-10">
       <header className="flex flex-col md:row items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Business Hours</h1>
-          <p className="text-slate-500">Define your weekly availability and operational breaks.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Çalışma Saatleri</h1>
+          <p className="text-slate-500">Haftalık müsaitlik durumunuzu ve operasyonel molalarınızı tanımlayın.</p>
         </div>
         <Button className="rounded-2xl h-14 px-10 glow-teal gap-3 text-lg" onClick={() => toast.info('Advanced overrides coming soon')}>
            <Plus className="w-5 h-5" />
-           Add Override
+           İstisna Ekle
         </Button>
       </header>
 
@@ -96,7 +96,7 @@ export default function SchedulePage() {
                       dayData?.is_closed ? "bg-rose-500/10 text-rose-500 hover:bg-rose-500/20" : "bg-teal-500/10 text-teal-400 hover:bg-teal-500/20"
                     )}
                    >
-                     {dayData?.is_closed ? 'Open Day' : 'Close Day'}
+                     {dayData?.is_closed ? 'Günü Aç' : 'Günü Kapat'}
                    </Button>
                 </div>
              </Card>
@@ -110,13 +110,13 @@ export default function SchedulePage() {
                <AlertCircle className="w-8 h-8" />
             </div>
             <div>
-               <h4 className="text-xl font-bold text-white mb-1">Global Precision Warning</h4>
-               <p className="text-slate-400 text-sm max-w-lg leading-relaxed italic">"A business without a schedule is a ship without a compass." Ensure your hours are locked before launching your public profile.</p>
+               <h4 className="text-xl font-bold text-white mb-1">Küresel Hassasiyet Uyarısı</h4>
+               <p className="text-slate-400 text-sm max-w-lg leading-relaxed italic">"Çalışma saati olmayan bir işletme, pusulası olmayan bir gemi gibidir." Kamu profilinizi yayınlamadan önce saatlerinizi sabitlediğinizden emin olun.</p>
             </div>
          </div>
          <Button className="h-16 px-10 rounded-2xl glow-teal gap-2 text-lg">
             <Save className="w-5 h-5" />
-            Save Changes
+            Değişiklikleri Kaydet
          </Button>
       </Card>
     </div>

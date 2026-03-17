@@ -42,8 +42,8 @@ export default function AdminUsersPage() {
     <div className="space-y-12">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Platform Users</h1>
-          <p className="text-slate-500">Overview of all active accounts across customers, owners, and administrators.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Platform Kullanıcıları</h1>
+          <p className="text-slate-500">Müşteriler, sahipler ve yöneticiler genelindeki tüm aktif hesaplara genel bakış.</p>
         </div>
         <div className="flex gap-3">
           <div className="relative w-full md:w-64">
@@ -52,7 +52,7 @@ export default function AdminUsersPage() {
           </div>
           <Button variant="outline" className="border-white/10 glass rounded-xl gap-2 h-10">
             <Filter className="w-4 h-4 text-teal-400" />
-            Filter
+            Filtrele
           </Button>
         </div>
       </header>
@@ -69,7 +69,7 @@ export default function AdminUsersPage() {
                 : "text-slate-500 hover:text-slate-300"
             )}
           >
-            {role}s
+            {role === 'all' ? 'tümü' : role === 'customer' ? 'müşteri' : role === 'owner' ? 'işletme sahibi' : role === 'admin' ? 'yönetici' : role}
           </button>
         ))}
       </div>
@@ -78,11 +78,11 @@ export default function AdminUsersPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Identity</TableHead>
-              <TableHead>Contact Info</TableHead>
-              <TableHead className="text-center">Role</TableHead>
-              <TableHead className="text-center">Security</TableHead>
-              <TableHead className="text-right">Action</TableHead>
+              <TableHead>Kimlik</TableHead>
+              <TableHead>İletişim Bilgisi</TableHead>
+              <TableHead className="text-center">Rol</TableHead>
+              <TableHead className="text-center">Güvenlik</TableHead>
+              <TableHead className="text-right">İşlem</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -108,7 +108,7 @@ export default function AdminUsersPage() {
                 <TableCell>
                   <div className="flex flex-col gap-1 text-[11px] text-slate-400">
                      <span className="flex items-center gap-1.5"><Mail className="w-3 h-3 text-teal-500/50" /> {u.email}</span>
-                     <span className="text-[9px] text-slate-600 font-medium ml-4.5 italic">Member since Jan 2026</span>
+                     <span className="text-[9px] text-slate-600 font-medium ml-4.5 italic">Ocak 2026'dan beri üye</span>
                   </div>
                 </TableCell>
                 <TableCell className="text-center">
@@ -118,7 +118,7 @@ export default function AdminUsersPage() {
                     u.role === 'owner' ? "bg-teal-500/10 text-teal-400 border-teal-500/10" :
                     "bg-blue-500/10 text-blue-400 border-blue-500/10"
                   )}>
-                    {u.role}
+                    {u.role === 'admin' ? 'yönetici' : u.role === 'owner' ? 'işletme sahibi' : 'müşteri'}
                   </Badge>
                 </TableCell>
                 <TableCell className="text-center">

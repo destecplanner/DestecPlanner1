@@ -37,15 +37,15 @@ export default function CustomerProfilePage() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['customer-profile'] });
-      toast.success('Profile updated successfully');
+      toast.success('Profil başarıyla güncellendi');
     }
   });
 
   return (
     <div className="space-y-12">
       <header>
-        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Your Profile</h1>
-        <p className="text-slate-500">Manage your personal information and platform preferences.</p>
+        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Profiliniz</h1>
+        <p className="text-slate-500">Kişisel bilgilerinizi ve platform tercihlerinizi yönetin.</p>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -54,21 +54,21 @@ export default function CustomerProfilePage() {
              <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                    <User className="w-5 h-5 text-teal-400" />
-                   Personal Details
+                   Kişisel Detaylar
                 </CardTitle>
                 <CardDescription>
-                   Update your contact information and identity on the platform.
+                   Platformdaki iletişim bilgilerinizi ve kimliğinizi güncelleyin.
                 </CardDescription>
              </CardHeader>
 
              <CardContent className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                    <div className="space-y-3">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Full Name</label>
+                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Ad Soyad</label>
                       <Input defaultValue={profile?.name} className="h-14 bg-white/5 border-white/10 rounded-2xl px-6 focus:ring-teal-500/50" placeholder="John Doe" />
                    </div>
                    <div className="space-y-3">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Email Address</label>
+                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">E-posta Adresi</label>
                       <div className="relative">
                          <Mail className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
                          <Input defaultValue={profile?.email} disabled className="h-14 bg-white/5 border-white/10 rounded-2xl pl-16 pr-6 opacity-60 cursor-not-allowed" />
@@ -78,7 +78,7 @@ export default function CustomerProfilePage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                    <div className="space-y-3">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Phone Number</label>
+                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Telefon Numarası</label>
                       <div className="relative">
                          <Phone className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-teal-500/80" />
                          <Input defaultValue={profile?.phone} className="h-14 bg-white/5 border-white/10 rounded-2xl pl-16 pr-6 focus:ring-teal-500/50" placeholder="+1 (555) 000-0000" />
@@ -89,7 +89,7 @@ export default function CustomerProfilePage() {
                 <div className="pt-8 border-t border-white/5">
                    <Button className="h-16 px-12 rounded-2xl glow-teal text-lg group">
                       <Save className="mr-2 w-5 h-5" />
-                      Save Personal Info
+                      Kişisel Bilgileri Kaydet
                       <ChevronRight className="ml-2 w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                    </Button>
                 </div>
@@ -100,10 +100,10 @@ export default function CustomerProfilePage() {
              <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                    <Shield className="w-5 h-5 text-teal-400" />
-                   Security Settings
+                   Güvenlik Ayarları
                 </CardTitle>
                 <CardDescription>
-                   Manage your account protection and data privacy.
+                   Hesap korumanızı ve veri gizliliğinizi yönetin.
                 </CardDescription>
              </CardHeader>
              <CardContent className="space-y-6">
@@ -113,8 +113,8 @@ export default function CustomerProfilePage() {
                          <Lock className="w-5 h-5" />
                       </div>
                       <div>
-                         <h4 className="text-white font-bold text-sm mb-1">Change Password</h4>
-                         <p className="text-xs text-slate-500 italic">Strengthen your account defense.</p>
+                         <h4 className="text-white font-bold text-sm mb-1">Şifreyi Değiştir</h4>
+                         <p className="text-xs text-slate-500 italic">Hesap savunmanızı güçlendirin.</p>
                       </div>
                    </div>
                    <ChevronRight className="w-5 h-5 text-slate-800" />
@@ -125,8 +125,8 @@ export default function CustomerProfilePage() {
                          <Bell className="w-5 h-5" />
                       </div>
                       <div>
-                         <h4 className="text-white font-bold text-sm mb-1">Notifications</h4>
-                         <p className="text-xs text-slate-500 italic">Manage your alert ecosystem.</p>
+                         <h4 className="text-white font-bold text-sm mb-1">Bildirimler</h4>
+                         <p className="text-xs text-slate-500 italic">Uyarı ekosisteminizi yönetin.</p>
                       </div>
                    </div>
                    <ChevronRight className="w-5 h-5 text-slate-800" />
@@ -137,7 +137,7 @@ export default function CustomerProfilePage() {
 
         <div className="space-y-10">
            <Card className="p-8 border-white/5 flex flex-col items-center gap-8 text-center bg-white/5 overflow-hidden">
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 italic">Profile Visual</h3>
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 italic">Profil Görseli</h3>
               <div className="w-44 h-44 rounded-full bg-slate-950 border-2 border-dashed border-white/10 flex flex-col items-center justify-center gap-3 text-slate-700 group hover:border-teal-500/40 transition-all cursor-pointer relative">
                  <div className="absolute inset-2 rounded-full border border-white/5 animate-pulse" />
                  {profile?.avatar_url ? (
@@ -145,7 +145,7 @@ export default function CustomerProfilePage() {
                  ) : (
                    <>
                     <User className="w-12 h-12 opacity-20" />
-                    <span className="text-[9px] font-bold uppercase tracking-widest">Update Photo</span>
+                    <span className="text-[9px] font-bold uppercase tracking-widest">Fotoğrafı Güncelle</span>
                    </>
                  )}
                  <div className="absolute inset-0 bg-slate-950/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-full backdrop-blur-sm">
@@ -153,7 +153,7 @@ export default function CustomerProfilePage() {
                  </div>
               </div>
               <p className="text-[11px] text-slate-500 italic px-4 leading-relaxed">
-                 Max size 2MB. Use a professional portrait for an elite presence.
+                 Maksimum boyut 2MB. Elit bir görünüm için profesyonel bir portre kullanın.
               </p>
            </Card>
 
@@ -162,8 +162,8 @@ export default function CustomerProfilePage() {
                  <Zap className="w-6 h-6 text-teal-400" />
               </div>
               <div>
-                <h4 className="text-[10px] font-bold text-slate-500 mb-1 uppercase tracking-[0.2em]">Platform Identity</h4>
-                <p className="text-sm font-bold text-white italic">Premium Member #{profile?.id || '2408'}</p>
+                <h4 className="text-[10px] font-bold text-slate-500 mb-1 uppercase tracking-[0.2em]">Platform Kimliği</h4>
+                <p className="text-sm font-bold text-white italic">Premium Üye #{profile?.id || '2408'}</p>
               </div>
            </div>
         </div>
