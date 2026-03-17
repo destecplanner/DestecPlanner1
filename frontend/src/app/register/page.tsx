@@ -1,3 +1,3 @@
-import RegisterPage from '../auth/register/page';
+import RoleSelectionPage from '../auth/register/role/page';
 
-export default RegisterPage;
+export default RoleSelectionPage;

@@ -66,7 +66,7 @@ export function Header({ isDashboard = false }: { isDashboard?: boolean }) {
               Giriş Yap
             </Link>
             <Button asChild size="sm" className="rounded-full px-8 shadow-2xl shadow-primary/20">
-              <Link href="/auth/register">
+              <Link href="/register">
                 Ücretsiz Başla
               </Link>
             </Button>

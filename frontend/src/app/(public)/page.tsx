@@ -44,7 +44,7 @@ export default function HomePage() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="border-stone-200 hover:bg-stone-50 text-slate-800">
-              <Link href="/auth/register?role=owner">İşletme Kaydı</Link>
+              <Link href="/register">İşletme Kaydı</Link>
             </Button>
           </div>
         </motion.div>
@@ -87,7 +87,7 @@ export default function HomePage() {
           <h2 className="text-7xl md:text-[9rem] font-black mb-12 tracking-tighter text-slate-900 leading-[0.9]">İşletmenizi <br/> yükseltin.</h2>
           <p className="text-slate-500 text-xl mb-20 max-w-2xl mx-auto font-bold opacity-70 italic">Zamanlarını ve büyümelerini yönetmek için DestecPlanner kullanan profesyonellerin premium ağına katılın.</p>
           <Button size="lg" asChild className="h-24 px-20 text-2xl">
-            <Link href="/auth/register?role=owner">Ücretsiz Başla</Link>
+            <Link href="/register">Ücretsiz Başla</Link>
           </Button>
         </motion.div>
       </section>
