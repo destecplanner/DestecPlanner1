@@ -3,54 +3,88 @@
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, TrendingUp, ArrowRight, Sparkles } from "lucide-react";
+import { Zap, ShieldCheck, TrendingUp, ArrowRight, Sparkles, Search, MapPin } from "lucide-react";
 
 export default function HomePage() {
+  const popularSearches = [
+    "Kişisel Bakım", "Sağlık & Terapi", "Eğitim", "Fitness", "Danışmanlık", "Etkinlik"
+  ];
+
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden bg-[#FBFBFC]">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-gradient-to-b from-teal-50/50 to-transparent -z-10 blur-[120px] pointer-events-none" />
+
       {/* Hero Section */}
-      <section className="relative px-6 pt-32 pb-40 md:pt-56 md:pb-72 max-w-7xl mx-auto z-10">
+      <section className="relative px-6 pt-24 pb-32 md:pt-40 md:pb-48 max-w-7xl mx-auto z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className="text-center space-y-12"
         >
+          {/* Hero Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-stone-100 border border-stone-200 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-12 shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-teal-50 border border-teal-100 text-teal-600 text-xs font-bold shadow-sm mx-auto"
           >
-            <Sparkles className="w-4 h-4 text-primary" />
-            VİZYONER İŞLETMELERİ GÜÇLENDİRİYORUZ
+            <Sparkles className="w-4 h-4" />
+            Kendinize En Uygun Hizmeti Bulun
           </motion.div>
           
-          <h1 className="text-7xl md:text-[10rem] font-black tracking-tighter mb-12 leading-[0.85] text-slate-900">
-            Modern Randevu <br />
-            <span className="text-gradient">Yeniden Tanımlandı.</span>
-          </h1>
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+              Profesyonel Hizmet ve <br />
+              <span className="text-teal-500">Randevunuzu Alın</span>
+            </h1>
+            
+            <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+              Şehrinizdeki en iyi uzmanları, hizmet merkezlerini ve profesyonel işletmeleri keşfedin. Saniyeler içinde online randevu oluşturun.
+            </p>
+          </div>
           
-          <p className="text-slate-500 text-xl md:text-2xl max-w-2xl mx-auto mb-20 leading-relaxed font-bold opacity-80">
-            Hızla büyüyen işletmeler için elit randevu ekosistemi. 
-            Müşterilerle bağlantı kurun, iş akışlarını otomatikleştirin ve markanızı hassasiyetle ölçeklendirin.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-            <Button size="lg" asChild className="group">
-              <Link href="/explore">
-                Keşfetmeye Başla
-                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild className="border-stone-200 hover:bg-stone-50 text-slate-800">
-              <Link href="/register">İşletme Kaydı</Link>
-            </Button>
+          {/* Search Bar */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-full p-2 pl-8 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row items-center gap-4">
+              <div className="flex-1 flex items-center gap-3 w-full border-b md:border-b-0 md:border-r border-slate-100 py-3 md:py-0">
+                <Search className="w-5 h-5 text-slate-400" />
+                <input 
+                  type="text" 
+                  placeholder="Ne arıyorsunuz? (Örn. Saç Kesimi)" 
+                  className="bg-transparent border-0 focus:ring-0 text-slate-900 placeholder:text-slate-400 w-full font-medium"
+                />
+              </div>
+              
+              <div className="flex-1 flex items-center gap-3 w-full py-3 md:py-0">
+                <MapPin className="w-5 h-5 text-slate-400" />
+                <input 
+                  type="text" 
+                  placeholder="Nerede? (Örn. Kadıköy, İstanbul)" 
+                  className="bg-transparent border-0 focus:ring-0 text-slate-900 placeholder:text-slate-400 w-full font-medium"
+                />
+              </div>
+
+              <Button className="w-full md:w-auto h-14 px-10 rounded-full bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg shadow-lg shadow-teal-500/20 border-0">
+                Ara
+              </Button>
+            </div>
+          </div>
+
+          {/* Popular Searches */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
+            <span className="text-slate-400 text-sm font-medium mr-2">Popüler aramalar:</span>
+            {popularSearches.map((search) => (
+              <button 
+                key={search} 
+                className="px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-semibold hover:border-teal-500 hover:text-teal-600 transition-all shadow-sm"
+              >
+                {search}
+              </button>
+            ))}
           </div>
         </motion.div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-primary/5 blur-[160px] rounded-full -z-10 animate-pulse" />
       </section>
 
       {/* Feature Grid */}
