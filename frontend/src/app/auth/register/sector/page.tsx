@@ -58,12 +58,12 @@ export default function SectorSelectionPage() {
           <Link
             key={sector.id}
             href={`/auth/register?role=owner&sector=${sector.id}`}
-            className="flex flex-col items-center justify-center p-6 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md hover:scale-[1.05] transition-all duration-300 gap-4 group"
+            className="flex flex-col items-center justify-center p-6 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md hover:scale-[1.05] transition-all duration-300 gap-4 group"
           >
-            <div className={`w-14 h-14 ${sector.bg} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+            <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center group-hover:bg-slate-100 transition-colors duration-300">
               {sector.icon}
             </div>
-            <span className="text-[11px] font-bold text-slate-900 text-center leading-tight px-1">
+            <span className="text-[11px] font-black text-slate-800 text-center leading-tight px-1 group-hover:text-teal-600 transition-colors">
               {sector.title}
             </span>
           </Link>
