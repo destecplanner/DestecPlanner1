@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, TrendingUp, ArrowRight, Sparkles, Search, MapPin } from "lucide-react";
+import { Zap, ShieldCheck, TrendingUp, ArrowRight, Sparkles, Search, MapPin, Scissors, HeartPulse, GraduationCap, Dumbbell } from "lucide-react";
 
 export default function HomePage() {
   const popularSearches = [
@@ -87,24 +87,40 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Feature Grid */}
-      <section className="px-6 py-32 relative">
+      {/* Categories Section */}
+      <section className="px-6 py-24 relative bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <FeatureCard 
-              icon={<Zap className="w-8 h-8 text-primary" />}
-              title="Anında Randevu"
-              description="Tescilli gerçek zamanlı doğrulama motoru, çakışan randevuları ortadan kaldırır ve sıfır gecikmeli planlama sağlar."
+          <div className="flex items-end justify-between mb-16">
+            <div className="space-y-2">
+              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">Hizmet Kategorileri</h2>
+              <p className="text-slate-500 font-medium">İhtiyacınıza en uygun uzmanı seçin</p>
+            </div>
+            <Link href="/explore" className="flex items-center gap-2 text-teal-600 font-bold hover:text-teal-700 transition-colors group">
+              Tümünü Gör
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <CategoryCard 
+              icon={<Scissors className="w-8 h-8 text-teal-600" />}
+              title="Kişisel Bakım"
+              subtext="2.5k+ Hizmet Noktası"
             />
-            <FeatureCard 
-              icon={<ShieldCheck className="w-8 h-8 text-primary" />}
-              title="Üst Düzey Güvenlik"
-              description="İşletmenizi ve müşteri verilerinizi koruyan kurumsal düzeyde izolasyon ve rol tabanlı erişim kontrolü."
+            <CategoryCard 
+              icon={<HeartPulse className="w-8 h-8 text-teal-600" />}
+              title="Sağlık & Terapi"
+              subtext="1.2k+ Uzman"
             />
-            <FeatureCard 
-              icon={<TrendingUp className="w-8 h-8 text-primary" />}
-              title="Gelişmiş Analizler"
-              description="Gelir hızı, personel performansı ve müşteri elde tutma metriklerine ilişkin derin bilgiler."
+            <CategoryCard 
+              icon={<GraduationCap className="w-8 h-8 text-teal-600" />}
+              title="Eğitim & Kurs"
+              subtext="450+ Eğitmen"
+            />
+            <CategoryCard 
+              icon={<Dumbbell className="w-8 h-8 text-teal-600" />}
+              title="Spor & Fitness"
+              subtext="600+ Salon"
             />
           </div>
         </div>
@@ -129,18 +145,18 @@ export default function HomePage() {
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+function CategoryCard({ icon, title, subtext }: { icon: React.ReactNode, title: string, subtext: string }) {
   return (
     <motion.div 
-      whileHover={{ y: -8 }}
-      className="p-12 glass-card border-stone-100 hover:border-primary/20 transition-all flex flex-col gap-8 shadow-xl hover:shadow-2xl"
+      whileHover={{ y: -10, scale: 1.02 }}
+      className="p-10 bg-white rounded-[2.5rem] border border-slate-100 transition-all flex flex-col items-center text-center gap-8 shadow-sm hover:shadow-xl group cursor-pointer"
     >
-      <div className="w-16 h-16 bg-stone-50 rounded-[2rem] flex items-center justify-center border border-stone-100 group-hover:scale-110 transition-transform">
+      <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center group-hover:bg-teal-50 transition-colors">
         {icon}
       </div>
-      <div>
-        <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">{title}</h3>
-        <p className="text-slate-500 text-base leading-relaxed font-medium opacity-80">{description}</p>
+      <div className="space-y-2">
+        <h3 className="text-xl font-bold text-slate-900">{title}</h3>
+        <p className="text-slate-400 font-medium text-sm tracking-tight">{subtext}</p>
       </div>
     </motion.div>
   );
