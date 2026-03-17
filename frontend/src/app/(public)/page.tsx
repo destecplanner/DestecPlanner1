@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, TrendingUp, ArrowRight, Sparkles, Search, MapPin, Scissors, HeartPulse, GraduationCap, Dumbbell } from "lucide-react";
+import { Zap, ShieldCheck, TrendingUp, ArrowRight, Sparkles, Search, MapPin, Scissors, HeartPulse, GraduationCap, Dumbbell, Star } from "lucide-react";
 
 export default function HomePage() {
   const popularSearches = [
@@ -126,6 +126,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Popular Businesses Section */}
+      <section className="px-6 py-24 relative bg-[#FBFBFC]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-5xl font-bold text-slate-900 tracking-tight">Şehrin En İyileri</h2>
+            <p className="text-slate-500 text-lg font-medium">Müşterilerden en yüksek puan alan işletmeleri keşfedin.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <BusinessCard 
+              image="/placeholder-business.jpg"
+              rating="4.9"
+              category="Hizmet Merkezi"
+              title="Premium Bakım Merkezi"
+              location="Kadıköy, İstanbul (1.2 km)"
+              price="250"
+            />
+            <BusinessCard 
+              image="/placeholder-business.jpg"
+              rating="4.8"
+              category="Güzellik Salonu"
+              title="Elite Hair & Beauty"
+              location="Şişli, İstanbul (3.5 km)"
+              price="180"
+            />
+            <BusinessCard 
+              image="/placeholder-business.jpg"
+              rating="5.0"
+              category="Spa & Masaj"
+              title="Zen Wellness Center"
+              location="Beşiktaş, İstanbul (2.1 km)"
+              price="450"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="px-6 py-40">
         <motion.div 
@@ -142,6 +179,52 @@ export default function HomePage() {
         </motion.div>
       </section>
     </div>
+  );
+}
+
+function BusinessCard({ image, rating, category, title, location, price }: { 
+  image: string, rating: string, category: string, title: string, location: string, price: string 
+}) {
+  return (
+    <motion.div 
+      whileHover={{ y: -8 }}
+      className="bg-white rounded-[2rem] shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col group border border-slate-100"
+    >
+      {/* Image Area */}
+      <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-200 animate-pulse group-hover:scale-105 transition-transform duration-500" />
+        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm self-start px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5 z-10 border border-white">
+          <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+          <span className="text-sm font-bold text-slate-900">{rating}</span>
+        </div>
+      </div>
+
+      {/* Content Area */}
+      <div className="p-8 flex flex-col flex-1">
+        <div className="space-y-4 flex-1">
+          <div className="text-[10px] font-black uppercase tracking-[0.2em] text-teal-600">
+            {category}
+          </div>
+          <h3 className="text-2xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors">
+            {title}
+          </h3>
+          <div className="flex items-center gap-2 text-slate-400 font-medium">
+            <MapPin className="w-4 h-4" />
+            <span className="text-sm">{location}</span>
+          </div>
+        </div>
+
+        <div className="pt-6 mt-6 border-t border-slate-50 flex items-center justify-between">
+          <div className="text-slate-900 font-bold">
+            <span className="text-slate-400 text-sm font-medium mr-2">Başlangıç</span>
+            <span className="text-xl">₺{price}'den</span>
+          </div>
+          <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-teal-500 group-hover:text-white transition-all">
+            <ArrowRight className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
