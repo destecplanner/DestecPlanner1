@@ -18,7 +18,7 @@ export default function RoleSelectionPage() {
       title: 'İşletme Sahibiyim',
       description: 'Hizmet verip işletmemi yönetmek istiyorum.',
       icon: <Store className="w-6 h-6 text-indigo-600" />,
-      href: '/auth/register?role=owner',
+      href: '/auth/register/sector',
       iconBg: 'bg-indigo-50',
     },
   ];
