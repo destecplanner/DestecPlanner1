@@ -1,20 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import api from '@/lib/api';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-export default function LoginPage() {
+function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const { login } = useAuth();
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ export default function LoginPage() {
       login(res.data.data.access_token, res.data.data.user);
       
       const role = res.data.data.user.role;
-      const returnTo = new URLSearchParams(window.location.search).get('returnTo');
+      const returnTo = searchParams.get('returnTo');
       
       if (returnTo) {
         router.push(returnTo);
@@ -44,6 +45,7 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+
   return (
     <div className="flex flex-col gap-8">
       {/* Logo & Header */}
@@ -117,5 +119,13 @@ export default function LoginPage() {
         </div>
       </form>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-12 text-slate-400 font-bold tracking-widest text-xs">Yükleniyor...</div>}>
+      <LoginForm />
+    </Suspense>
   );
 }
