@@ -67,7 +67,7 @@ export function Header({ isDashboard = false }: { isDashboard?: boolean }) {
             </Link>
             <Button asChild size="sm" className="rounded-full px-8 shadow-2xl shadow-primary/20">
               <Link href="/auth/register">
-                Hemen Dene
+                Ücretsiz Başla
               </Link>
             </Button>
           </div>

@@ -87,7 +87,7 @@ export default function HomePage() {
           <h2 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter text-slate-900 leading-tight">İşletme operasyonlarınızı <br/> yükseltmeye hazır mısınız?</h2>
           <p className="text-slate-600 text-xl mb-16 max-w-2xl mx-auto font-bold opacity-80">Zamanlarını ve büyümelerini yönetmek için DestecPlanner kullanan profesyonellerin premium ağına katılın.</p>
           <Button size="lg" asChild className="h-20 px-16 rounded-full shadow-3xl shadow-primary/30">
-            <Link href="/auth/register?role=owner">Hemen Dene</Link>
+            <Link href="/auth/register?role=owner">Ücretsiz Başla</Link>
           </Button>
         </motion.div>
       </section>

@@ -49,8 +49,8 @@ export function Navbar() {
           <Button variant="outline" size="sm" asChild>
             <Link href="/auth/login">Giriş Yap</Link>
           </Button>
-          <Button size="sm" asChild>
-            <Link href="/auth/register/owner">Başlayın</Link>
+          <Button size="sm" asChild className="rounded-full shadow-lg shadow-primary/20">
+            <Link href="/auth/register">Ücretsiz Başla</Link>
           </Button>
         </div>
 
@@ -78,8 +78,8 @@ export function Navbar() {
               </Link>
             ))}
             <hr className="border-slate-100 my-2" />
-            <Button className="w-full" asChild>
-              <Link href="/auth/register/owner">Başlayın</Link>
+            <Button className="w-full rounded-2xl" asChild>
+              <Link href="/auth/register">Ücretsiz Başla</Link>
             </Button>
           </div>
         </div>
