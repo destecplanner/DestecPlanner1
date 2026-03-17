@@ -37,54 +37,54 @@ export default function ExplorePage() {
     <div className="min-h-screen pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
-        <div className="mb-12">
+        <div className="mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3 mb-4"
+            className="flex items-center gap-4 mb-6"
           >
-            <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center border border-teal-100">
-              <Sparkles className="w-5 h-5 text-teal-600" />
+            <div className="w-12 h-12 rounded-2xl bg-stone-50 flex items-center justify-center border border-stone-100 shadow-sm">
+              <Sparkles className="w-6 h-6 text-primary" />
             </div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900">Sıradaki Deneyiminizi Bulun</h1>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-none">Deneyiminizi Keşfedin</h1>
           </motion.div>
-          <p className="text-slate-600 max-w-xl leading-relaxed font-medium">
-            Yakınınızdaki premium işletmeleri keşfedin. Kategoriye, konuma göre filtreleyin veya doğrudan favori profesyonellerinizi arayın.
+          <p className="text-slate-500 max-w-xl leading-relaxed font-bold opacity-80 text-lg">
+            Yakınınızdaki premium işletmeleri keşfedin. Kategoriye ve konuma göre filtreleyerek elit hizmetlere ulaşın.
           </p>
         </div>
 
         {/* Search & Filter Bar */}
-        <div className="glass-card p-4 rounded-[2.5rem] border-slate-200 mb-16 flex flex-col lg:flex-row gap-4 items-center shadow-xl bg-white/80">
+        <div className="glass-card p-5 rounded-[3rem] border-stone-100 mb-20 flex flex-col lg:flex-row gap-5 items-center shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] bg-white/90">
           <div className="relative flex-1 w-full pl-6">
-            <Search className="absolute left-10 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-10 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300" />
             <Input 
               placeholder="Hizmet, işletme veya profesyonel arayın..." 
-              className="pl-12 bg-transparent border-0 focus-visible:ring-0 h-14"
+              className="pl-14 bg-transparent border-0 focus-visible:ring-0 h-16 text-lg font-bold placeholder:text-stone-300"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <div className="h-8 w-px bg-slate-200 hidden lg:block" />
-          <div className="flex w-full lg:w-auto gap-4">
-            <div className="relative flex-1 lg:w-64">
-              <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 z-10" />
+          <div className="h-10 w-px bg-stone-100 hidden lg:block" />
+          <div className="flex w-full lg:w-auto gap-5">
+            <div className="relative flex-1 lg:w-72">
+              <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 z-10" />
               <Input 
                 placeholder="Tüm Şehirler" 
-                className="pl-12 bg-slate-50 border-slate-200 h-14 rounded-2xl"
+                className="pl-14 bg-stone-50/50 border-stone-100 h-16 rounded-[1.5rem] font-bold text-slate-900 placeholder:text-stone-300"
               />
             </div>
             <Select value={category} onValueChange={setCategory}>
-              <SelectTrigger className="w-full lg:w-48 h-14 rounded-2xl border-slate-200 bg-slate-50">
+              <SelectTrigger className="w-full lg:w-56 h-16 rounded-[1.5rem] border-stone-100 bg-stone-50/50 font-bold text-slate-900">
                 <div className="flex items-center gap-2">
-                  <SlidersHorizontal className="w-4 h-4 text-slate-400" />
+                  <SlidersHorizontal className="w-5 h-5 text-slate-300" />
                   <SelectValue placeholder="Kategori" />
                 </div>
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Tüm Kategoriler</SelectItem>
-                <SelectItem value="1">Saç ve Güzellik</SelectItem>
-                <SelectItem value="2">Sağlık ve Zindelik</SelectItem>
-                <SelectItem value="3">Profesyonel Hizmetler</SelectItem>
+              <SelectContent className="rounded-[2rem] border-stone-100">
+                <SelectItem value="all" className="font-bold py-3 uppercase tracking-wider text-[10px]">Tüm Kategoriler</SelectItem>
+                <SelectItem value="1" className="font-bold py-3 uppercase tracking-wider text-[10px]">Saç ve Güzellik</SelectItem>
+                <SelectItem value="2" className="font-bold py-3 uppercase tracking-wider text-[10px]">Sağlık ve Zindelik</SelectItem>
+                <SelectItem value="3" className="font-bold py-3 uppercase tracking-wider text-[10px]">Profesyonel Hizmetler</SelectItem>
               </SelectContent>
             </Select>
           </div>

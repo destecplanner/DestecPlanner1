@@ -26,58 +26,62 @@ export function BusinessCard({ business }: BusinessCardProps) {
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="group overflow-hidden border-slate-100 hover:border-teal-500/30 transition-all h-full flex flex-col bg-white shadow-sm hover:shadow-md">
-        <div className="aspect-[16/9] relative bg-slate-50 overflow-hidden">
+      <Card className="group overflow-hidden border-stone-100/60 hover:border-primary/30 transition-all h-full flex flex-col bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)]">
+        <div className="aspect-[16/10] relative bg-stone-50 overflow-hidden">
           {business.banner_url ? (
             <img 
               src={business.banner_url} 
               alt={business.name} 
-              className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" 
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" 
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-slate-200">
-              <SparklesIcon className="w-12 h-12 opacity-50" />
+            <div className="w-full h-full flex items-center justify-center text-stone-200">
+              <SparklesIcon className="w-16 h-16 opacity-30" />
             </div>
           )}
-          <div className="absolute top-4 left-4">
-            <Badge variant="glass" className="backdrop-blur-md">
-              {business.category?.name || 'General'}
+          <div className="absolute top-5 left-5">
+            <Badge variant="glass" className="bg-white/80 backdrop-blur-md border-white/50 text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
+              {business.category?.name || 'GENEL'}
             </Badge>
           </div>
           {business.rating && (
-            <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-sm border border-slate-100">
-              <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-              <span className="text-xs font-bold text-slate-900">{business.rating.toFixed(1)}</span>
-              <span className="text-[10px] text-slate-500 font-medium">({business.review_count})</span>
+            <div className="absolute bottom-5 left-5 bg-white/90 backdrop-blur-xl px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm border border-stone-100/50">
+              <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+              <span className="text-sm font-black text-slate-900">{business.rating.toFixed(1)}</span>
+              <span className="text-[11px] text-slate-400 font-bold tracking-tight">({business.review_count})</span>
             </div>
           )}
         </div>
         
-        <CardHeader className="p-8 pb-0">
-          <CardTitle className="text-xl group-hover:text-teal-600 transition-colors">
+        <CardHeader className="p-10 pb-2">
+          <CardTitle className="text-2xl font-black tracking-tight group-hover:text-primary transition-colors">
             {business.name}
           </CardTitle>
-          <CardDescription className="line-clamp-2 min-h-[40px] mt-2 text-slate-500 font-medium">
-            {business.description || 'Açıklama belirtilmemiş.'}
+          <CardDescription className="line-clamp-2 min-h-[44px] mt-3 text-slate-500 text-base font-medium leading-relaxed opacity-80">
+            {business.description || 'Hizmet detayları ve randevu için tıklayın.'}
           </CardDescription>
         </CardHeader>
         
-        <CardContent className="p-8 pt-6 flex-1 flex flex-col justify-between gap-6">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2.5 text-slate-500 text-sm font-medium">
-              <MapPin className="w-4 h-4 text-teal-600/60" />
-              <span className="truncate">{business.address || 'Haritada konum'}</span>
+        <CardContent className="p-10 pt-4 flex-1 flex flex-col justify-between gap-8">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 text-slate-400 text-sm font-bold">
+              <div className="w-8 h-8 rounded-full bg-stone-50 flex items-center justify-center border border-stone-100">
+                <MapPin className="w-3.5 h-3.5 text-primary opacity-60" />
+              </div>
+              <span className="truncate">{business.address || 'Konum bilgisi mevcut'}</span>
             </div>
-            <div className="flex items-center gap-2.5 text-slate-500 text-sm font-medium">
-              <Clock className="w-4 h-4 text-teal-600/60" />
-              <span>Yarın müsait</span>
+            <div className="flex items-center gap-3 text-slate-400 text-sm font-bold">
+              <div className="w-8 h-8 rounded-full bg-stone-50 flex items-center justify-center border border-stone-100">
+                <Clock className="w-3.5 h-3.5 text-primary opacity-60" />
+              </div>
+              <span>Yarın müsait randevu var</span>
             </div>
           </div>
           
-          <Button asChild className="w-full h-12 rounded-xl group/btn overflow-hidden">
+          <Button asChild className="w-full h-14 rounded-full group/btn relative overflow-hidden">
             <Link href={`/explore/${business.slug}`}>
-              Profili Gör
-              <ArrowUpRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+              Profili İncele
+              <ArrowUpRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
             </Link>
           </Button>
         </CardContent>

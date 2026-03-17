@@ -7,20 +7,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-white shadow-xl shadow-primary/20 hover:brightness-110 hover:shadow-primary/30",
+        default: "bg-primary text-white shadow-[0_10px_30px_-5px_rgba(63,176,172,0.3)] hover:brightness-105 hover:shadow-[0_15px_35px_-5px_rgba(63,176,172,0.4)] hover:-translate-y-0.5",
         destructive: "bg-rose-500 text-white hover:bg-rose-600 shadow-xl shadow-rose-500/10",
-        outline: "border-2 border-slate-200 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-300",
-        secondary: "bg-slate-100 border border-slate-200 text-slate-900 hover:bg-slate-200",
-        ghost: "hover:bg-slate-100 text-slate-600 hover:text-slate-900",
+        outline: "border-2 border-stone-100 bg-white text-slate-800 hover:bg-stone-50 hover:border-stone-200",
+        secondary: "bg-stone-100 border border-stone-200 text-slate-900 hover:bg-stone-200",
+        ghost: "hover:bg-stone-100 text-slate-600 hover:text-slate-900",
         link: "text-primary underline-offset-4 hover:underline",
         glass: "bg-white/90 backdrop-blur-md border border-white text-slate-900 shadow-sm hover:bg-white",
-        premium: "bg-slate-900 text-white border border-slate-800 hover:bg-black shadow-2xl",
+        premium: "bg-slate-900 text-white border border-slate-800 hover:bg-black shadow-2xl shadow-black/20",
       },
       size: {
-        default: "h-14 px-8 rounded-2xl",
-        sm: "h-10 rounded-xl px-4 text-xs uppercase tracking-widest font-black",
-        lg: "h-20 rounded-[2.5rem] px-12 text-xl font-black",
-        icon: "h-12 w-12 rounded-xl",
+        default: "h-14 px-10 rounded-full",
+        sm: "h-11 rounded-full px-6 text-xs uppercase tracking-widest font-black",
+        lg: "h-20 rounded-full px-14 text-xl font-black",
+        icon: "h-12 w-12 rounded-2xl",
       },
     },
     defaultVariants: {
