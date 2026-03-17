@@ -3,35 +3,37 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    /* Warmer, softer background */
+    --background: 30 20% 98%; /* Warm white / Stone 50ish */
+    --foreground: 20 14% 12%; /* Warm Charcoal / Stone 900ish */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 20 14% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 20 14% 12%;
 
-    --primary: 171 77% 40%;
+    /* SaloonPlanner Brand Color (#3FB0AC) */
+    --primary: 178 47% 47%; 
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11.2%;
+    --secondary: 30 15% 94%; /* Warmer secondary */
+    --secondary-foreground: 20 14% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 30 10% 95%;
+    --muted-foreground: 25 5% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47% 11.2%;
+    --accent: 178 47% 95%; /* Soft teal accent */
+    --accent-foreground: 178 47% 30%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 171 77% 40%;
+    --border: 30 10% 90%;
+    --input: 30 10% 90%;
+    --ring: 178 47% 47%;
 
-    --radius: 1.25rem;
+    --radius: 1.5rem; /* Slightly more rounded */
   }
 }
 

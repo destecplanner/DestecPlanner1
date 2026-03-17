@@ -26,49 +26,49 @@ export default function HomePage() {
             Vizyoner İşletmeleri Güçlendiriyoruz
           </motion.div>
           
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
+          <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-8 leading-[0.8] text-slate-900">
             Modern Randevu <br />
             <span className="text-gradient">Yeniden Tanımlandı.</span>
           </h1>
           
-          <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
+          <p className="text-slate-600 text-xl md:text-2xl max-w-2xl mx-auto mb-16 leading-relaxed font-bold">
             Hızla büyüyen işletmeler için elit randevu ekosistemi. 
             Müşterilerle bağlantı kurun, iş akışlarını otomatikleştirin ve markanızı cerrahi hassasiyetle ölçeklendirin.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button size="lg" asChild className="group h-16 px-10 rounded-2xl">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+            <Button size="lg" asChild className="group h-20 px-12 rounded-full">
               <Link href="/explore">
                 Keşfetmeye Başla
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="h-16 px-10 rounded-2xl border-slate-200 hover:bg-slate-50">
+            <Button variant="outline" size="lg" asChild className="h-20 px-12 rounded-full border-stone-200 hover:bg-stone-50 text-slate-800">
               <Link href="/auth/register?role=owner">İşletme Kaydı</Link>
             </Button>
           </div>
         </motion.div>
 
         {/* Decorative elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal-500/5 blur-[150px] rounded-full -z-10 animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 blur-[150px] rounded-full -z-10 animate-pulse" />
       </section>
 
       {/* Feature Grid */}
       <section className="px-6 py-32 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <FeatureCard 
-              icon={<Zap className="w-6 h-6 text-teal-600" />}
+              icon={<Zap className="w-8 h-8 text-primary" />}
               title="Anında Randevu"
               description="Tescilli gerçek zamanlı doğrulama motoru, çakışan randevuları ortadan kaldırır ve sıfır gecikmeli planlama sağlar."
             />
             <FeatureCard 
-              icon={<ShieldCheck className="w-6 h-6 text-teal-600" />}
+              icon={<ShieldCheck className="w-8 h-8 text-primary" />}
               title="Üst Düzey Güvenlik"
               description="İşletmenizi ve müşteri verilerinizi koruyan kurumsal düzeyde izolasyon ve rol tabanlı erişim kontrolü."
             />
             <FeatureCard 
-              icon={<TrendingUp className="w-6 h-6 text-teal-600" />}
+              icon={<TrendingUp className="w-8 h-8 text-primary" />}
               title="Gelişmiş Analizler"
               description="Gelir hızı, personel performansı ve müşteri elde tutma metriklerine ilişkin derin bilgiler."
             />
@@ -77,17 +77,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-32">
         <motion.div 
           whileInView={{ opacity: 1, scale: 1 }}
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto glass rounded-[3rem] p-12 md:p-24 text-center border-teal-500/10"
+          className="max-w-7xl mx-auto glass-card rounded-[4rem] p-16 md:p-32 text-center border-stone-100 shadow-2xl"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-slate-900">İşletme operasyonlarınızı <br/> yükseltmeye hazır mısınız?</h2>
-          <p className="text-slate-600 text-lg mb-12 max-w-xl mx-auto font-medium">Zamanlarını ve büyümelerini yönetmek için DestecPlanner kullanan profesyonellerin premium ağına katılın.</p>
-          <Button size="lg" asChild className="h-16 px-12 rounded-2xl">
-            <Link href="/auth/register?role=owner">Ücretsiz Başlayın</Link>
+          <h2 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter text-slate-900 leading-tight">İşletme operasyonlarınızı <br/> yükseltmeye hazır mısınız?</h2>
+          <p className="text-slate-600 text-xl mb-16 max-w-2xl mx-auto font-bold opacity-80">Zamanlarını ve büyümelerini yönetmek için DestecPlanner kullanan profesyonellerin premium ağına katılın.</p>
+          <Button size="lg" asChild className="h-20 px-16 rounded-full shadow-3xl shadow-primary/30">
+            <Link href="/auth/register?role=owner">Hemen Dene</Link>
           </Button>
         </motion.div>
       </section>
