@@ -45,33 +45,37 @@ export default function LoginPage() {
     }
   };
 
-    <div className="space-y-8">
-      <div className="text-center">
-        <h2 className="text-3xl font-black text-slate-900 tracking-tight mb-3">
-          Tekrar Hoş Geldiniz
-        </h2>
-        <p className="text-slate-500 text-sm font-medium leading-relaxed">
-          İşletmenizi ve randevularınızı yönetmek için giriş yapın.
-        </p>
+    <div className="flex flex-col gap-8">
+      {/* Logo & Header */}
+      <div className="text-center space-y-4">
+        <div className="inline-flex items-center justify-center">
+          <h1 className="text-3xl font-black tracking-tighter text-slate-900">
+            Destec<span className="text-teal-600 italic">Planner</span>
+          </h1>
+        </div>
+        <div className="space-y-2">
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Tekrar Hoş Geldiniz</h2>
+          <p className="text-slate-500 text-sm font-medium">Büyümeye devam etmek için giriş yapın</p>
+        </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div className="space-y-2">
-          <label className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">E-posta Adresi</label>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-1.5">
+          <label className="text-xs font-bold text-slate-500 ml-1">E-posta Adresi</label>
           <Input 
             type="email" 
             placeholder="isim@ornek.com" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="h-14 rounded-2xl border-stone-100 bg-stone-50/30 focus:bg-white transition-all text-slate-900 placeholder:text-stone-300 font-bold"
+            className="h-12 rounded-xl border-gray-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition-all font-medium"
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <div className="flex items-center justify-between px-1">
-            <label className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">Şifre</label>
-            <Link href="/auth/forgot-password" title="Şifremi Unuttum" className="text-[10px] font-black uppercase tracking-wider text-primary hover:text-primary/80 transition-colors">
+            <label className="text-xs font-bold text-slate-500">Şifre</label>
+            <Link href="/auth/forgot-password" title="Şifremi Unuttum" className="text-xs font-bold text-teal-600 hover:text-teal-700">
               Şifremi Unuttum
             </Link>
           </div>
@@ -81,41 +85,33 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="h-14 rounded-2xl border-stone-100 bg-stone-50/30 focus:bg-white transition-all text-slate-900 placeholder:text-stone-300 font-bold"
+            className="h-12 rounded-xl border-gray-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition-all font-medium"
           />
         </div>
         
         {error && (
-          <div className="bg-rose-50 border border-rose-100 p-4 rounded-2xl animate-in fade-in zoom-in-95 duration-300">
-            <p className="text-rose-600 text-[10px] font-black uppercase tracking-wider text-center flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+          <div className="bg-rose-50 border border-rose-100 p-3 rounded-xl">
+            <p className="text-rose-600 text-xs font-bold text-center">
               {error}
             </p>
           </div>
         )}
         
-        <div className="pt-4">
+        <div className="pt-2">
           <Button 
             type="submit" 
-            className="w-full h-16 rounded-full shadow-[0_20px_40px_-10px_rgba(63,176,172,0.3)] font-black text-lg transition-all active:scale-[0.98] hover:shadow-[0_25px_50px_-12px_rgba(63,176,172,0.4)]" 
-            size="lg" 
+            className="w-full h-12 rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98] disabled:opacity-70 border-0" 
             disabled={loading}
           >
-            {loading ? (
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:-0.3s]" />
-                <span className="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:-0.15s]" />
-                <span className="w-2 h-2 rounded-full bg-white animate-bounce" />
-              </span>
-            ) : 'Giriş Yap'}
+            {loading ? 'Yükleniyor...' : 'Giriş Yap'}
           </Button>
         </div>
         
-        <div className="pt-6 border-t border-stone-100">
-          <p className="text-center text-slate-400 text-sm font-bold">
+        <div className="pt-4 text-center">
+          <p className="text-slate-500 text-sm font-medium">
             Hesabınız yok mu? {' '}
-            <Link href="/auth/register" className="text-primary hover:text-primary/80 underline underline-offset-8 decoration-primary/20 hover:decoration-primary/40 transition-all font-black ml-1">
-              Kayıt Ol
+            <Link href="/auth/register" className="text-teal-600 hover:text-teal-700 font-bold ml-1">
+              Hemen Kaydol
             </Link>
           </p>
         </div>
