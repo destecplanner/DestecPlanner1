@@ -34,7 +34,7 @@ export default function ExplorePage() {
   const meta = data?.meta || { current_page: 1, last_page: 1 };
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
+    <div className="min-h-screen pt-24 pb-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="mb-16">
@@ -43,7 +43,7 @@ export default function ExplorePage() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-4 mb-6"
           >
-            <div className="w-12 h-12 rounded-2xl bg-stone-50 flex items-center justify-center border border-stone-100 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center border border-slate-100 shadow-sm">
               <Sparkles className="w-6 h-6 text-primary" />
             </div>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-none">Deneyiminizi Keşfedin</h1>
@@ -54,33 +54,33 @@ export default function ExplorePage() {
         </div>
 
         {/* Search & Filter Bar */}
-        <div className="glass-card p-5 rounded-[3rem] border-stone-100 mb-20 flex flex-col lg:flex-row gap-5 items-center shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] bg-white/90">
-          <div className="relative flex-1 w-full pl-6">
-            <Search className="absolute left-10 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300" />
+        <div className="bg-white p-2 rounded-full border border-slate-100 mb-20 flex flex-col lg:flex-row gap-5 items-center shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300">
+          <div className="relative flex-1 w-full pl-8">
+            <Search className="absolute left-10 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-300" />
             <Input 
               placeholder="Hizmet, işletme veya profesyonel arayın..." 
-              className="pl-14 bg-transparent border-0 focus-visible:ring-0 h-16 text-lg font-bold placeholder:text-stone-300"
+              className="pl-14 bg-transparent border-0 focus-visible:ring-0 h-16 text-lg font-bold placeholder:text-slate-300"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <div className="h-10 w-px bg-stone-100 hidden lg:block" />
-          <div className="flex w-full lg:w-auto gap-5">
+          <div className="h-10 w-px bg-slate-100 hidden lg:block" />
+          <div className="flex w-full lg:w-auto gap-5 pr-2">
             <div className="relative flex-1 lg:w-72">
               <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 z-10" />
               <Input 
                 placeholder="Tüm Şehirler" 
-                className="pl-14 bg-stone-50/50 border-stone-100 h-16 rounded-[1.5rem] font-bold text-slate-900 placeholder:text-stone-300"
+                className="pl-14 bg-slate-50 border-slate-100 h-14 rounded-full font-bold text-slate-900 placeholder:text-slate-300"
               />
             </div>
             <Select value={category} onValueChange={setCategory}>
-              <SelectTrigger className="w-full lg:w-56 h-16 rounded-[1.5rem] border-stone-100 bg-stone-50/50 font-bold text-slate-900">
+              <SelectTrigger className="w-full lg:w-56 h-14 rounded-full border-slate-100 bg-slate-50 font-bold text-slate-900">
                 <div className="flex items-center gap-2">
                   <SlidersHorizontal className="w-5 h-5 text-slate-300" />
                   <SelectValue placeholder="Kategori" />
                 </div>
               </SelectTrigger>
-              <SelectContent className="rounded-[2rem] border-stone-100">
+              <SelectContent className="rounded-[2rem] border-slate-100">
                 <SelectItem value="all" className="font-bold py-3 uppercase tracking-wider text-[10px]">Tüm Kategoriler</SelectItem>
                 <SelectItem value="1" className="font-bold py-3 uppercase tracking-wider text-[10px]">Saç ve Güzellik</SelectItem>
                 <SelectItem value="2" className="font-bold py-3 uppercase tracking-wider text-[10px]">Sağlık ve Zindelik</SelectItem>

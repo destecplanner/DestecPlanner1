@@ -30,7 +30,7 @@ export default function BusinessDetailPage() {
   const staff = business?.staff || [];
 
   return (
-    <div className="min-h-screen pb-32 bg-white">
+    <div className="min-h-screen pb-32 bg-slate-50">
       {/* Banner Section */}
       <div className="relative h-[400px] md:h-[500px] w-full bg-slate-50 overflow-hidden">
         {business.banner_url ? (
@@ -53,41 +53,41 @@ export default function BusinessDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               className="flex flex-col md:flex-row items-end gap-8"
             >
-              <div className="w-32 h-32 md:w-48 md:h-48 rounded-[3rem] bg-white border border-slate-100 p-2 shrink-0 shadow-2xl">
+              <div className="w-32 h-32 md:w-52 md:h-52 rounded-[2.5rem] bg-white border border-slate-100 p-2 shrink-0 shadow-2xl relative z-10 -mb-16 md:-mb-24 ml-0 md:ml-6">
                 <img 
                   src={business.logo_url || "https://ui-avatars.com/api/?name=" + business.name} 
                   alt={business.name} 
-                  className="w-full h-full object-cover rounded-[2.5rem]" 
+                  className="w-full h-full object-cover rounded-[2rem]" 
                 />
               </div>
               <div className="flex-1 pb-4">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <Badge variant="glass" className="bg-teal-50 text-teal-700 border-teal-100 uppercase tracking-widest text-[10px] font-black">
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <Badge variant="glass" className="bg-primary/10 text-primary border-primary/20 uppercase tracking-widest text-[10px] font-black px-4 py-1.5 rounded-full">
                     {business.category?.name || 'Profesyonel Hizmet'}
                   </Badge>
                   {business.rating && (
-                    <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-slate-100 shadow-sm">
-                      <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                      <span className="text-xs font-bold text-slate-900">{business.rating.toFixed(1)}</span>
+                    <div className="flex items-center gap-1.5 bg-white px-4 py-1.5 rounded-full border border-slate-100 shadow-sm">
+                      <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                      <span className="text-sm font-black text-slate-900">{business.rating.toFixed(1)}</span>
                     </div>
                   )}
                 </div>
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 mb-2">{business.name}</h1>
-                <div className="flex items-center gap-6 text-slate-500 text-sm font-medium">
+                <h1 className="text-4xl md:text-7xl font-black tracking-tight text-slate-900 mb-6 leading-[1.1]">{business.name}</h1>
+                <div className="flex flex-wrap items-center gap-6 text-slate-500 text-sm font-bold">
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-teal-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     {business.address || "Şehir Merkezi, Türkiye"}
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-teal-600" />
-                    18:00'e kadar açık
+                    <Clock className="w-5 h-5 text-primary" />
+                    <span className="text-slate-900">18:00'e kadar açık</span>
                   </div>
                 </div>
               </div>
               <div className="pb-4">
-                <Button size="lg" className="h-16 px-10 rounded-2xl shadow-lg shadow-teal-600/20 text-lg font-bold" asChild>
+                <Button size="lg" className="h-16 px-12 rounded-full bg-primary hover:brightness-110 shadow-xl shadow-primary/20 text-lg font-black" asChild>
                   <Link href={`/book/${business.slug}`}>
-                    <Calendar className="mr-2 w-5 h-5" />
+                    <Calendar className="mr-2 w-6 h-6" />
                     Hemen Randevu Al
                   </Link>
                 </Button>
@@ -102,56 +102,54 @@ export default function BusinessDetailPage() {
           {/* Left Column: Services & Staff */}
           <div className="lg:col-span-2 space-y-16">
             {/* About */}
-            <section>
+            <section className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
-                  <Info className="w-4 h-4 text-teal-600" />
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <Info className="w-5 h-5 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900">İşletme Hakkında</h2>
+                <h2 className="text-2xl font-black text-slate-900 tracking-tight">İşletme Hakkında</h2>
               </div>
-              <p className="text-slate-600 leading-relaxed text-lg whitespace-pre-line font-medium">
+              <p className="text-slate-500 leading-relaxed text-lg whitespace-pre-line font-bold opacity-80">
                 {business.description || "Bu işletme için henüz bir açıklama girilmemiş."}
               </p>
             </section>
 
             {/* Services */}
             <section>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
-                  <Sparkles className="w-4 h-4 text-teal-600" />
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <Sparkles className="w-5 h-5 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900">Hizmetlerimiz</h2>
+                <h2 className="text-3xl font-black text-slate-900 tracking-tight">Hizmetlerimiz</h2>
               </div>
-              <div className="grid grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 gap-6">
                 {services.map((service: any) => (
                   <motion.div 
                     key={service.id}
                     whileHover={{ x: 5 }}
                     className="group"
                   >
-                    <Card className="border-slate-100 bg-white hover:border-teal-500/20 cursor-pointer overflow-hidden rounded-3xl shadow-sm hover:shadow-md transition-all">
-                      <div className="p-6 flex items-center justify-between">
-                        <div className="flex items-center gap-6">
-                          <div className="w-16 h-16 rounded-2xl bg-teal-50 border border-slate-50 flex items-center justify-center group-hover:border-teal-500/20 transition-all">
-                             <CheckCircle2 className="w-6 h-6 text-teal-600/40 group-hover:text-teal-600 transition-colors" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-bold text-slate-900 mb-1">{service.name}</h3>
-                            <div className="flex items-center gap-4 text-slate-500 text-xs font-medium">
-                              <span className="flex items-center gap-1.5 uppercase tracking-widest font-black">
-                                <Clock className="w-3 h-3" />
-                                {service.duration} DK
-                              </span>
-                              <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />
-                              <span className="text-teal-600 font-black">{service.price} {business.currency || '₺'}</span>
-                            </div>
+                    <div className="bg-white border border-slate-100 rounded-[1.5rem] p-8 flex items-center justify-between shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className="flex items-center gap-8">
+                        <div className="w-20 h-20 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/20 transition-all">
+                           <CheckCircle2 className="w-8 h-8 text-primary opacity-20 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-black text-slate-900 mb-2 leading-tight uppercase tracking-tight">{service.name}</h3>
+                          <div className="flex items-center gap-6">
+                            <span className="flex items-center gap-2 text-slate-400 text-sm font-black uppercase tracking-widest">
+                              <Clock className="w-4 h-4" />
+                              {service.duration} DK
+                            </span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-slate-200" />
+                            <span className="text-primary font-black text-lg">₺{service.price}</span>
                           </div>
                         </div>
-                        <Button variant="outline" size="sm" className="rounded-xl border-slate-200 group-hover:border-teal-500/40 transition-all font-bold" asChild>
-                           <Link href={`/book/${business.slug}?service=${service.id}`}>Seç</Link>
-                        </Button>
                       </div>
-                    </Card>
+                      <Button variant="default" className="rounded-full px-8 h-12 bg-slate-50 text-slate-400 hover:bg-primary hover:text-white transition-all font-black uppercase tracking-widest text-xs border-0" asChild>
+                         <Link href={`/book/${business.slug}?service=${service.id}`}>Seç</Link>
+                      </Button>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -159,16 +157,16 @@ export default function BusinessDetailPage() {
 
             {/* Team */}
             <section>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
-                  <User className="w-4 h-4 text-teal-600" />
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <User className="w-5 h-5 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900">Ekibimiz</h2>
+                <h2 className="text-3xl font-black text-slate-900 tracking-tight">Ekibimiz</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {staff.map((member: any) => (
-                  <Card key={member.id} className="border-slate-100 bg-white p-6 rounded-3xl flex items-center gap-6 shadow-sm">
-                    <div className="w-20 h-20 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
+                  <div key={member.id} className="bg-white border border-slate-100 p-8 rounded-[1.5rem] flex items-center gap-6 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50 shrink-0">
                       <img 
                         src={member.profile_image_url || "https://ui-avatars.com/api/?name=" + member.name} 
                         alt={member.name}
@@ -176,14 +174,14 @@ export default function BusinessDetailPage() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-1">{member.name}</h3>
-                      <p className="text-slate-400 text-[10px] uppercase tracking-widest font-black mb-2">{member.role_title || 'Uzman'}</p>
-                      <div className="flex items-center gap-1.5">
+                      <h3 className="text-xl font-black text-slate-900 mb-1 leading-tight">{member.name}</h3>
+                      <p className="text-slate-400 text-[10px] uppercase tracking-[0.2em] font-black mb-3">{member.role_title || 'Uzman'}</p>
+                      <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-100 w-fit">
                         <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
-                        <span className="text-[10px] font-bold text-slate-700">4.9 (42 Değerlendirme)</span>
+                        <span className="text-[10px] font-black text-slate-700 uppercase tracking-tighter">4.9 (42 Yorum)</span>
                       </div>
                     </div>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </section>
@@ -191,12 +189,12 @@ export default function BusinessDetailPage() {
 
           {/* Right Column: Sticky Sidebar / Info */}
           <div className="space-y-8">
-            <Card className="sticky top-32 border-slate-100 bg-white p-8 rounded-[2.5rem] shadow-xl">
-              <h3 className="text-xl font-bold text-slate-900 mb-8 flex items-center justify-between font-black">
+            <Card className="sticky top-32 border-slate-100 bg-white p-10 rounded-[2.5rem] shadow-xl">
+              <h3 className="text-2xl font-black text-slate-900 mb-10 flex items-center justify-between tracking-tight">
                 Çalışma Saatleri
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {[
                   { d: 'Pazartesi', open: '09:00 - 18:00' },
                   { d: 'Salı', open: '09:00 - 18:00' },
@@ -206,29 +204,40 @@ export default function BusinessDetailPage() {
                   { d: 'Cumartesi', open: '10:00 - 14:00' },
                   { d: 'Pazar', open: 'Kapalı' },
                 ].map((item) => (
-                  <div key={item.d} className="flex justify-between items-center text-sm">
-                    <span className="text-slate-500 font-medium">{item.d}</span>
-                    <span className="text-slate-900 font-bold">
+                  <div key={item.d} className="flex justify-between items-center text-sm group">
+                    <span className="text-slate-500 font-bold group-hover:text-slate-900 transition-colors">{item.d}</span>
+                    <span className="text-slate-900 font-black tracking-tight">
                        {item.open}
                     </span>
                   </div>
                 ))}
               </div>
-              <div className="mt-12 pt-8 border-t border-slate-50">
-                 <div className="flex items-center gap-4 text-slate-500 mb-6 group cursor-pointer">
-                   <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:border-teal-500/20 transition-all">
-                     <MapPin className="w-4 h-4 group-hover:text-teal-600" />
+              <div className="mt-12 pt-10 border-t border-slate-100">
+                 <div className="flex items-center gap-5 text-slate-500 group cursor-pointer">
+                   <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:border-primary/30 transition-all">
+                     <MapPin className="w-5 h-5 group-hover:text-primary transition-colors" />
                    </div>
                    <div className="flex-1">
-                     <p className="text-[10px] uppercase tracking-widest font-black text-slate-400 mb-0.5">Konum</p>
-                     <p className="text-sm text-slate-900 font-bold leading-tight">{business.address || 'Cadde Sokak, No: 42, Şehir'}</p>
+                     <p className="text-[10px] uppercase tracking-[0.2em] font-black text-slate-400 mb-1">Konum</p>
+                     <p className="text-sm text-slate-900 font-black leading-tight tracking-tight">{business.address || 'Cadde Sokak, No: 42, Şehir'}</p>
                    </div>
-                   <ChevronRight className="w-4 h-4 text-slate-300" />
+                   <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+                      <ChevronRight className="w-4 h-4" />
+                   </div>
                  </div>
               </div>
             </Card>
           </div>
         </div>
+      </div>
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-slate-100 md:hidden z-50">
+        <Button size="lg" className="w-full h-14 rounded-full bg-primary hover:brightness-110 shadow-lg shadow-primary/20 text-base font-black" asChild>
+          <Link href={`/book/${business.slug}`}>
+            <Calendar className="mr-2 w-5 h-5" />
+            Randevu Al
+          </Link>
+        </Button>
       </div>
     </div>
   );

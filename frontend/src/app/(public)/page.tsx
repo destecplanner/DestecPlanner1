@@ -11,7 +11,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-[#FBFBFC]">
+    <div className="relative overflow-hidden bg-slate-50">
       {/* Background Decorative Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-gradient-to-b from-teal-50/50 to-transparent -z-10 blur-[120px] pointer-events-none" />
 
@@ -35,9 +35,9 @@ export default function HomePage() {
           </motion.div>
           
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1]">
               Profesyonel Hizmet ve <br />
-              <span className="text-teal-500">Randevunuzu Alın</span>
+              <span className="text-primary">Randevunuzu Alın</span>
             </h1>
             
             <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
@@ -47,26 +47,26 @@ export default function HomePage() {
           
           {/* Search Bar */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-full p-2 pl-8 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row items-center gap-4">
-              <div className="flex-1 flex items-center gap-3 w-full border-b md:border-b-0 md:border-r border-slate-100 py-3 md:py-0">
-                <Search className="w-5 h-5 text-slate-400" />
+            <div className="bg-white rounded-full p-2 pl-10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col md:flex-row items-center gap-4 transition-all duration-300">
+              <div className="flex-1 flex items-center gap-4 w-full border-b md:border-b-0 md:border-r border-slate-100 py-3 md:py-0">
+                <Search className="w-6 h-6 text-slate-300" />
                 <input 
                   type="text" 
                   placeholder="Ne arıyorsunuz? (Örn. Saç Kesimi)" 
-                  className="bg-transparent border-0 focus:ring-0 text-slate-900 placeholder:text-slate-400 w-full font-medium"
+                  className="bg-transparent border-0 focus:ring-0 text-slate-900 placeholder:text-slate-400 w-full font-bold"
                 />
               </div>
               
-              <div className="flex-1 flex items-center gap-3 w-full py-3 md:py-0">
-                <MapPin className="w-5 h-5 text-slate-400" />
+              <div className="flex-1 flex items-center gap-4 w-full py-3 md:py-0">
+                <MapPin className="w-6 h-6 text-slate-300" />
                 <input 
                   type="text" 
                   placeholder="Nerede? (Örn. Kadıköy, İstanbul)" 
-                  className="bg-transparent border-0 focus:ring-0 text-slate-900 placeholder:text-slate-400 w-full font-medium"
+                  className="bg-transparent border-0 focus:ring-0 text-slate-900 placeholder:text-slate-400 w-full font-bold"
                 />
               </div>
 
-              <Button className="w-full md:w-auto h-14 px-10 rounded-full bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg shadow-lg shadow-teal-500/20 border-0">
+              <Button className="w-full md:w-auto px-12 bg-primary hover:brightness-110 text-white shadow-xl shadow-primary/20 border-0">
                 Ara
               </Button>
             </div>
@@ -90,16 +90,16 @@ export default function HomePage() {
       {/* Categories Section */}
       <section className="px-6 py-24 relative bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-16">
-            <div className="space-y-2">
-              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">Hizmet Kategorileri</h2>
-              <p className="text-slate-500 font-medium">İhtiyacınıza en uygun uzmanı seçin</p>
+            <div className="flex items-end justify-between mb-16">
+              <div className="space-y-4 text-left">
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">Hizmet Kategorileri</h2>
+                <p className="text-slate-500 text-lg font-bold opacity-80">İhtiyacınıza en uygun uzmanı seçin</p>
+              </div>
+              <Link href="/explore" className="flex items-center gap-2 text-primary font-bold hover:text-primary transition-colors group">
+                Tümünü Gör
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
-            <Link href="/explore" className="flex items-center gap-2 text-teal-600 font-bold hover:text-teal-700 transition-colors group">
-              Tümünü Gör
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <CategoryCard 
@@ -130,8 +130,8 @@ export default function HomePage() {
       <section className="px-6 py-24 relative bg-[#FBFBFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl font-bold text-slate-900 tracking-tight">Şehrin En İyileri</h2>
-            <p className="text-slate-500 text-lg font-medium">Müşterilerden en yüksek puan alan işletmeleri keşfedin.</p>
+            <h2 className="text-5xl font-black text-slate-900 tracking-tight">Şehrin En İyileri</h2>
+            <p className="text-slate-500 text-lg font-bold opacity-80">Müşterilerden en yüksek puan alan işletmeleri keşfedin.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -187,8 +187,7 @@ function BusinessCard({ image, rating, category, title, location, price }: {
 }) {
   return (
     <motion.div 
-      whileHover={{ y: -8 }}
-      className="bg-white rounded-[2rem] shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col group border border-slate-100"
+      className="premium-card flex flex-col group overflow-hidden"
     >
       {/* Image Area */}
       <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
@@ -205,10 +204,10 @@ function BusinessCard({ image, rating, category, title, location, price }: {
           <div className="text-[10px] font-black uppercase tracking-[0.2em] text-teal-600">
             {category}
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors">
+          <h3 className="text-2xl font-black text-slate-900 group-hover:text-primary transition-colors leading-tight">
             {title}
           </h3>
-          <div className="flex items-center gap-2 text-slate-400 font-medium">
+          <div className="flex items-center gap-2 text-slate-400 font-bold">
             <MapPin className="w-4 h-4" />
             <span className="text-sm">{location}</span>
           </div>
@@ -231,15 +230,14 @@ function BusinessCard({ image, rating, category, title, location, price }: {
 function CategoryCard({ icon, title, subtext }: { icon: React.ReactNode, title: string, subtext: string }) {
   return (
     <motion.div 
-      whileHover={{ y: -10, scale: 1.02 }}
-      className="p-10 bg-white rounded-[2.5rem] border border-slate-100 transition-all flex flex-col items-center text-center gap-8 shadow-sm hover:shadow-xl group cursor-pointer"
+      className="premium-card p-10 flex flex-col items-center text-center gap-8 group cursor-pointer"
     >
-      <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center group-hover:bg-teal-50 transition-colors">
+      <div className="w-20 h-20 bg-slate-50 rounded-[1.5rem] flex items-center justify-center group-hover:bg-primary/10 transition-colors">
         {icon}
       </div>
-      <div className="space-y-2">
-        <h3 className="text-xl font-bold text-slate-900">{title}</h3>
-        <p className="text-slate-400 font-medium text-sm tracking-tight">{subtext}</p>
+      <div className="space-y-3">
+        <h3 className="text-xl font-black text-slate-900 leading-tight">{title}</h3>
+        <p className="text-slate-500 font-bold text-sm tracking-tight opacity-70">{subtext}</p>
       </div>
     </motion.div>
   );

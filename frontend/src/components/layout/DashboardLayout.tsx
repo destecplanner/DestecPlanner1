@@ -29,14 +29,14 @@ export function SharedDashboardLayout({ children, requiredRole }: SharedDashboar
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <div className="min-h-screen bg-[#FBFBFC] flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-teal-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 flex">
+    <div className="min-h-screen bg-[#FBFBFC] flex">
       <Sidebar />
       <div className="flex-1 flex flex-col min-w-0">
         <Header isDashboard={true} />

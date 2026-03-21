@@ -23,11 +23,9 @@ interface BusinessCardProps {
 export function BusinessCard({ business }: BusinessCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3 }}
+      className="premium-card h-full flex flex-col group overflow-hidden"
     >
-      <Card className="group overflow-hidden border-stone-100/60 hover:border-primary/30 transition-all h-full flex flex-col bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)]">
-        <div className="aspect-[16/10] relative bg-stone-50 overflow-hidden">
+        <div className="aspect-[16/10] relative bg-white overflow-hidden">
           {business.banner_url ? (
             <img 
               src={business.banner_url} 
@@ -35,7 +33,7 @@ export function BusinessCard({ business }: BusinessCardProps) {
               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" 
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-stone-200">
+            <div className="w-full h-full flex items-center justify-center text-slate-100 bg-slate-50">
               <SparklesIcon className="w-16 h-16 opacity-30" />
             </div>
           )}
@@ -45,7 +43,7 @@ export function BusinessCard({ business }: BusinessCardProps) {
             </Badge>
           </div>
           {business.rating && (
-            <div className="absolute bottom-5 left-5 bg-white/90 backdrop-blur-xl px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm border border-stone-100/50">
+            <div className="absolute bottom-5 left-5 bg-white/95 backdrop-blur-xl px-4 py-2 rounded-2xl flex items-center gap-2 shadow-sm border border-slate-100">
               <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
               <span className="text-sm font-black text-slate-900">{business.rating.toFixed(1)}</span>
               <span className="text-[11px] text-slate-400 font-bold tracking-tight">({business.review_count})</span>
@@ -57,22 +55,22 @@ export function BusinessCard({ business }: BusinessCardProps) {
           <CardTitle className="text-2xl font-black tracking-tight group-hover:text-primary transition-colors">
             {business.name}
           </CardTitle>
-          <CardDescription className="line-clamp-2 min-h-[44px] mt-3 text-slate-500 text-base font-medium leading-relaxed opacity-80">
+          <CardDescription className="line-clamp-2 min-h-[44px] mt-3 text-slate-500 text-base font-bold leading-relaxed opacity-70">
             {business.description || 'Hizmet detayları ve randevu için tıklayın.'}
           </CardDescription>
         </CardHeader>
         
         <CardContent className="p-10 pt-4 flex-1 flex flex-col justify-between gap-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-3 text-slate-400 text-sm font-bold">
-              <div className="w-8 h-8 rounded-full bg-stone-50 flex items-center justify-center border border-stone-100">
-                <MapPin className="w-3.5 h-3.5 text-primary opacity-60" />
+            <div className="flex items-center gap-3 text-slate-500 text-sm font-bold">
+              <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100">
+                <MapPin className="w-3.5 h-3.5 text-primary opacity-80" />
               </div>
               <span className="truncate">{business.address || 'Konum bilgisi mevcut'}</span>
             </div>
-            <div className="flex items-center gap-3 text-slate-400 text-sm font-bold">
-              <div className="w-8 h-8 rounded-full bg-stone-50 flex items-center justify-center border border-stone-100">
-                <Clock className="w-3.5 h-3.5 text-primary opacity-60" />
+            <div className="flex items-center gap-3 text-slate-500 text-sm font-bold">
+              <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100">
+                <Clock className="w-3.5 h-3.5 text-primary opacity-80" />
               </div>
               <span>Yarın müsait randevu var</span>
             </div>
@@ -85,7 +83,6 @@ export function BusinessCard({ business }: BusinessCardProps) {
             </Link>
           </Button>
         </CardContent>
-      </Card>
     </motion.div>
   );
 }
