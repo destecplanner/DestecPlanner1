@@ -62,7 +62,7 @@ export default function BusinessDetailPage() {
               </div>
               <div className="flex-1 pb-4">
                 <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <Badge variant="glass" className="bg-primary/10 text-primary border-primary/20 uppercase tracking-widest text-[10px] font-black px-4 py-1.5 rounded-full">
+                  <Badge variant="glass" className="bg-[#3fb0ac]/10 text-primary border-primary/20 uppercase tracking-widest text-[10px] font-black px-4 py-1.5 rounded-full">
                     {business.category?.name || 'Profesyonel Hizmet'}
                   </Badge>
                   {business.rating && (
@@ -104,7 +104,7 @@ export default function BusinessDetailPage() {
             {/* About */}
             <section className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
                   <Info className="w-5 h-5 text-primary" />
                 </div>
                 <h2 className="text-2xl font-black text-slate-900 tracking-tight">İşletme Hakkında</h2>
@@ -117,7 +117,7 @@ export default function BusinessDetailPage() {
             {/* Services */}
             <section>
               <div className="flex items-center gap-4 mb-10">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
                   <Sparkles className="w-5 h-5 text-primary" />
                 </div>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">Hizmetlerimiz</h2>
@@ -131,7 +131,7 @@ export default function BusinessDetailPage() {
                   >
                     <div className="bg-white border border-slate-100 rounded-[1.5rem] p-8 flex items-center justify-between shadow-sm hover:shadow-md transition-all duration-300">
                       <div className="flex items-center gap-8">
-                        <div className="w-20 h-20 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/20 transition-all">
+                        <div className="w-20 h-20 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-teal-500/10 group-hover:border-teal-500/20 transition-all">
                            <CheckCircle2 className="w-8 h-8 text-primary opacity-20 group-hover:opacity-100 transition-opacity" />
                         </div>
                         <div>
@@ -158,7 +158,7 @@ export default function BusinessDetailPage() {
             {/* Team */}
             <section>
               <div className="flex items-center gap-4 mb-10">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center border border-teal-500/20">
                   <User className="w-5 h-5 text-primary" />
                 </div>
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">Ekibimiz</h2>

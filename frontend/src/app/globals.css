@@ -104,7 +104,7 @@
   }
 
   .premium-card:hover {
-    @apply shadow-xl border-primary/20 -translate-y-1;
+    @apply shadow-xl border-teal-500/20 -translate-y-1;
   }
 
   /* Typography Scale from audit */
